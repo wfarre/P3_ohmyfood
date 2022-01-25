@@ -25,29 +25,30 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="company-title">ohmyfood</h1>
-        <!-- <img class="logo" src="./images/logo/ohmyfood@2x.svg" alt="logo oh my food!"> -->
+    <header id="header" class="main-header ">
+            <h4 class="company-title">ohmyfood</h1>
         <div class="location">
             <div class="icon icon-location">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
-            <h3>Paris, Belleville</h3>
+            <h3 class="loaction-txt">Paris, Belleville</h3>
         </div>
         <div class="header-title">
             <h1 class="hearder-title__main">Réservez le menu qui vous convient</h1>
             <p class="header-title__sub">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
         </div>
-        <button>Explorez nos restaurants</button>
+        <button class="btn btn--gradient btn--explore">Explorez nos restaurants</button>
     </header>
+
     <main>
-        <section id="functionning">
+
+        <section id="functionning" class="section section--functionning">
             <header class="block__header">
-                <h1 class="section-title">Fonctionnement</h1>
+                <h2 class="section-title">Fonctionnement</h1>
             </header>
 
             <div class="block__content button--wrapper">
-                <button>
+                <button class="btn btn--functionning">
                     <div class="index">
                         <span>1</span>
                     </div>
@@ -55,7 +56,7 @@
                     <p>Choissisez un restaurant</p>
                 </button>
 
-                <button>
+                <button class="btn btn--functionning">
                     <div class="index">
                         <span>2</span>
                     </div>
@@ -63,7 +64,7 @@
                     <p>Composez votre menu</p>
                 </button>
 
-                <button class="active">
+                <button class=" btn btn--functionning active">
                     <div class="index">
                         <span>3</span>
                     </div>
@@ -74,9 +75,9 @@
         </section>
         <!-- #functionning  -->
 
-        <section id="restaurant">
+        <section id="restaurant" class="section section--grey-bg section--restaurant ">
             <header class="block__header">
-                <h1 class="section-title">Restaurants</h1>
+                <h2 class="section-title">Restaurants</h1>
             </header>
             <div class="block__content">
                 <div class="card new">
@@ -88,8 +89,9 @@
                             <h3 class="card__content__text__title">La galette du goût</h3>
                             <p>Ménilmontant</p>
                         </div>
-                        <div class="icon icon--heart">
-                            <img class="heart" src="./images/iconmonstr-heart-thin.svg" alt="">
+                       <div class="icon icon--heart">
+                            <i class="fas fa-heart"></i>
+                            <i class="far fa-heart"></i>
                         </div>
                     </div>
                 </div>
@@ -122,6 +124,7 @@
                             <p>Cité Rouge</p>
                         </div>
                         <div class="icon icon--heart">
+                            <i class="fas fa-heart"></i>
                             <i class="far fa-heart"></i>
                         </div>
                     </div>
@@ -138,6 +141,7 @@
                             <p>Folie-Méricourt</p>
                         </div>
                         <div class="icon icon--heart">
+                            <i class="fas fa-heart"></i>
                             <i class="far fa-heart"></i>
                         </div>
                     </div>
@@ -149,7 +153,7 @@
     <footer>
         <div class="footer">
             <div class="block__header">
-                <h1 class="company-title">ohmyfood</h1>
+                <h4 class="company-title">ohmyfood</h1>
             </div>
 
             <!-- <img src="./images/logo/ohmyfood@2x.svg" alt="logo oh my food!"> -->

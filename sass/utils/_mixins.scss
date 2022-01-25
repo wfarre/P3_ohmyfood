@@ -1,0 +1,9 @@
+@mixin button-layout($bg-color,$font-color,$font-size,$border-radius, $padding){
+    box-shadow: $location-bg-color 0px 5px 16px;
+    border: none;
+    background: $bg-color;
+    color: $font-color;
+    font-size: $font-size;
+    border-radius: $border-radius;
+    padding: $padding;
+}
