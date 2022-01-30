@@ -1,0 +1,5 @@
+
+.container{
+    @include flexbox(column, space-between, center);
+    row-gap: 18px;
+}

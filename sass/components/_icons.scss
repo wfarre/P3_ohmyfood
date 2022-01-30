@@ -1,18 +1,10 @@
 .icon {
-    position: relative;
+    @include box-sizing(24px, 24px);
     font-size: 24px;
-    height: 24px;
-    width: 24px;
     align-self: center;
     overflow: hidden;
 
-    .i {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .far {
+    .far.fa-heart {
         color: black;
         z-index: 10;
         position: absolute;
@@ -21,14 +13,11 @@
 
         &::after {
             content: " ";
-            position: absolute;
-            height: 200%;
-            width: 200%;
+            @include box-sizing(200%, 200%, 35%, absolute);
             background-color: white;
             bottom: -100%;
             left: -50%;
             bottom: 0;
-            border-radius: 35%;
             z-index: -1;
         }
 
@@ -41,7 +30,7 @@
 
 
 
-    .fas {
+    .fas.fa-heart {
         position: absolute;
         top: 0;
         left: 0;
@@ -51,20 +40,15 @@
         overflow: hidden;
 
         &>.icon--heart__background {
-            position: absolute;
             background-color: red;
             background-clip: transparent;
             background: linear-gradient($primary-color, $secondary-color);
+            @include box-sizing(100%, 100%, 0, absolute);
             z-index: 0;
             top: 0;
             left: 0;
-            height: 100%;
-            width: 100%;
+           
         }
-
-
-
-
 
     }
 

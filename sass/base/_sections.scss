@@ -1,0 +1,40 @@
+.section-title {
+    margin-bottom: 25px;
+}
+
+.section-functionning {
+    padding: 0 5%;
+    margin: 50px 0;
+
+    .button--wrapper {
+        @include flexbox(column, flex-start, center);
+        padding-left: 12px;
+        row-gap: 18px
+    }
+
+
+   
+
+    .index {
+        @include box-sizing(24px, 24px, 100%, absolute);
+        @include flexbox(row, center, center);
+        left: -12px;
+        background-color: $primary-color;
+        color: white;
+        font-size: 12px;
+
+    }
+}
+
+.section{
+    padding: 0 5%;
+}
+
+.section--restaurant{
+    padding-top: 60px;
+}
+
+.section--grey-bg{
+    padding-bottom: 60px;
+    background-color: $bg-color;
+}

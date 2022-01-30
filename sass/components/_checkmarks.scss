@@ -1,0 +1,33 @@
+
+// chechemark for menu selection
+.checkmark-wrapper{
+    @include box-sizing(100%, 0, 0, absolute);
+    @include flexbox(row, center, center);
+    background-color: $tertiary-color;
+    visibility: hidden;
+    right: 0;
+    top:0;
+    transition: ease-out width 1s;
+    overflow: hidden;
+
+    .checkmark-icon{
+        color: white;
+        font-size: 24px;
+    }
+}
+
+input:checked ~ .checkmark-wrapper{
+    width: 60px;
+    visibility: visible;
+    z-index: 100;
+}
+
+// favorite checkmark 
+
+.checkbox{
+   display:none
+}
+
+.checkbox:checked ~ .far.fa-heart::after{
+    opacity: 0;
+}
