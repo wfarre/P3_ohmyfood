@@ -35,23 +35,7 @@ body {
 
 
 
-.active {
-    position: relative;
 
-    .icon{
-        color: $primary-color;
-    }
-
-    &::before {
-        content: " ";
-        @include box-sizing(100%,100%, 20px, absolute);
-        left: 0;
-        top: 0;
-        background-color: $primary-color;
-        opacity: 0.2;
-        z-index: 1;
-    }
-}
 
 
 
