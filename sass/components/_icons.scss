@@ -21,11 +21,16 @@
             z-index: -1;
         }
 
-        &:hover {
-            &::after {
-                animation: fill-heart 3s ease-in-out forwards;
+        @include desktop-only{
+            &:hover {
+                cursor: pointer;
+                &::after {
+                    animation: fill-heart 3s ease-in-out forwards;
+                }
             }
+
         }
+        
     }
 
 

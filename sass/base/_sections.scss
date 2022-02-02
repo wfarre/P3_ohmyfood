@@ -5,11 +5,17 @@
 .section-functionning {
     padding: 0 5%;
     margin: 50px 0;
+    @include desktop-only{
+        width: 27%
+    }
 
     .button--wrapper {
         @include flexbox(column, flex-start, center);
         padding-left: 12px;
-        row-gap: 18px
+        row-gap: 18px;
+        @include desktop-only{
+            row-gap:1.5rem;
+        }
     }
 
 
@@ -31,7 +37,11 @@
 }
 
 .section--restaurant{
-    padding-top: 60px;
+    padding-top: 50px;
+    @include desktop-only{
+        width: 45%;
+        border-radius: 10px;
+    }
 }
 
 .section--grey-bg{

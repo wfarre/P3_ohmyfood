@@ -1,6 +1,31 @@
 .btn{
+    
     &--explore{
+        position: relative;
+        // overflow: hidden;
         @include button-layout(linear-gradient($secondary-color,$primary-color), white, 16px, 40px, 15px 25px );
+        &:before{
+            content: " ";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            left: 0;
+            top:0;
+            box-shadow:  0px 5px 16px black;
+            border-radius: 40px;
+            opacity: 0;
+            transition: opacity 0.5s
+        }
+        // box-shadow: $location-bg-color 0px 16px 16px;
+        &:hover{
+
+            cursor: pointer;
+            &:before{
+                opacity: 0.3;
+            }
+        }
+
     }
     &--functionning{
         @include button-layout($bg-color, black, 16px, 20px, 0 8% );
@@ -18,27 +43,29 @@
         &__text{
             font-weight: bold;
         }
-        .active {
-            position: relative;
         
-            .icon{
-                color: $primary-color;
-            }
-        
-            &::before {
-                content: " ";
-                @include box-sizing(100%,100%, 20px, absolute);
-                left: 0;
-                top: 0;
-                background-color: $primary-color;
-                opacity: 0.2;
-                z-index: 1;
-            }
-        }
     }
 }
 
 .btn-wrapper{
     text-align: center;
     margin-top: 45px;
+}
+
+.active {
+    position: relative;
+
+    .icon{
+        color: $primary-color;
+    }
+
+    &::before {
+        content: " ";
+        @include box-sizing(100%,100%, 20px, absolute);
+        left: 0;
+        top: 0;
+        background-color: $primary-color;
+        opacity: 0.2;
+        z-index: 1;
+    }
 }

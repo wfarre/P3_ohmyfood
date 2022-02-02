@@ -28,6 +28,12 @@ input:checked ~ .checkmark-wrapper{
    display:none
 }
 
+
+
 .checkbox:checked ~ .far.fa-heart::after{
-    opacity: 0;
+    animation: fill-heart 2s ease-in-out forwards;
+    @include desktop-only{
+        animation: none;
+        opacity: 0;
+    }
 }

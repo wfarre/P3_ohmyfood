@@ -1,10 +1,12 @@
 .main-header {
     background-color: $bg-color;
+   
 
 
     .logo{
         @include flexbox(row, center, center);
         @include box-sizing(60px, 100%);
+        background-color: white;
         .company-title {
             @include font-title(30px, 400, black, $title-font );
         }
@@ -30,14 +32,58 @@
         margin-top: 40px;
         margin-bottom: 30px;
         padding: 0 11%;
+        z-index: 0;
+        // background-image: url("../public/images/delices-des-sens.jpg");
+        // @include desktop-only{
+        //     text-align: left;
+        //     padding-left: 22% ;
+
+        // }
+        
         &__main {
             font-size: 24px;
-            padding: 0 10%
+            padding: 0 10%;
+            z-index: 10;
+            // @include desktop-only{
+            //     padding: 0;
+            // }
+        }
+        &__sub{
+            z-index: 10;
         }
     }
 
     &--btn-wrapper{
         margin-top: 30px;
         padding-bottom: 50px;
+        z-index: 10;
+        // @include desktop-only{
+        //     text-align: left;
+        //     margin-left: 20%;
+
+        //     padding-bottom: 50px;
+
+        // }
     }
+
+    // .heading{
+    //     position: relative;
+    //     z-index: 1;
+    // }
+
+    // .heading::before{
+    //     content:" ";
+    //     position:absolute;
+    //     height: 130%;
+    //     width: 120%;
+    //     background: linear-gradient(0% $bg-color, 97% transparent);
+    //     transform: rotateZ(20deg) skewX(-15deg);
+    //     // z-index: -1;
+    //     bottom:9%;
+    //     left: 40%;
+    //     display: none;
+    //     @include desktop-only{
+    //         display: inline;
+    //     }
+    // }
 }

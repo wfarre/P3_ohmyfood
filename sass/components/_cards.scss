@@ -10,6 +10,12 @@
     @include box-sizing(250px, 100% , 10px);
     @include flexbox(column, flex-start);
     overflow: hidden;
+    @include desktop-only{
+        width: 45%;
+    }
+    &:hover{
+        cursor: pointer;
+    }
 
 
 
@@ -118,6 +124,7 @@
                     @extend %hidden-text;
                     font-size: 14px;
                     font-weight: 300;
+                    margin: 0;
                 }
             }
             .price{

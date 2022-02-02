@@ -26,6 +26,7 @@
 
 <body>
     <header id="header" class="main-header ">
+
         <div class="logo">
             <h4 class="company-title">ohmyfood</h1>
         </div>
@@ -35,139 +36,161 @@
             </div>
             <h3 class="loaction-txt">Paris, Belleville</h3>
         </div>
-        <div class="header-title">
-            <h2 class="header-title__main">Réservez le menu qui vous convient</h1>
-                <p class="header-title__sub">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-        </div>
-        <div class="btn-wrapper main-header--btn-wrapper">
-            <button class="btn btn--gradient btn--explore">Explorez nos restaurants</button>
-        </div>
+        <!-- <div class="container container--header"> -->
+            <!-- <div class="heading"> -->
+                <div class="header-title">
+                    <h2 class="header-title__main">Réservez le menu qui vous convient</h1>
+                        <p class="header-title__sub">Découvrez des restaurants d'exception, sélectionnés par nos soins.
+                        </p>
+                </div>
+                <div class="btn-wrapper main-header--btn-wrapper">
+                    <button class="btn btn--gradient btn--explore">Explorez nos restaurants</button>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="carousel">
+                <div class="carousel__item">
+                    <img src="./images/restaurants/a-la-francaise.jpg" alt="">
+                </div>
+                <div class="carousel__item">
+                    <img src="./images/restaurants/delices-des-sens.jpg" alt="">
+                </div>
+                <div class="carousel__item">
+                    <img src="./images/restaurants/la-note-enchatee.jpg" alt="">
+                </div>
+                <div class="carousel__item">
+                    <img src="./images/restaurants/palette-du-gout.jpg" alt="">
+                </div>
+            </div> -->
+        <!-- </div> -->
+        
+
     </header>
 
     <main>
 
-        <section id="functionning" class="section section-functionning">
-            <header class="block__header">
-                <h2 class="section-title">Fonctionnement</h1>
-            </header>
+        <div class="container container--wrapper">
+            <section id="functionning" class="section section-functionning">
+                <header class="block__header">
+                    <h2 class="section-title">Fonctionnement</h1>
+                </header>
 
-            <div class="block__content button--wrapper">
-                <button class="btn btn--functionning">
-                    <div class="index">
-                        <span>1</span>
-                    </div>
-                    <div class="btn--functionning__icon-box">
-                        <i class="fas fa-mobile-alt icon"></i>
-                    </div>
-
-                    <p class="btn--functionning__text">Choissisez un restaurant</p>
-                </button>
-
-                <button class="btn btn--functionning">
-                    <div class="index">
-                        <span>2</span>
-                    </div>
-                    <div class="btn--functionning__icon-box">
-                        <i class="fas fa-list-ul icon"></i>
-                    </div>
-                    <p class="btn--functionning__text">Composez votre menu</p>
-                </button>
-
-                <button class=" btn btn--functionning active">
-                    <div class="index">
-                        <span>3</span>
-                    </div>
-                    <div class="btn--functionning__icon-box">
-                        <i class="fas fa-store icon"></i>
-                    </div>
-                    <p class="btn--functionning__text">Dégustez au restaurant</p>
-                </button>
-            </div>
-        </section>
-        <!-- #functionning  -->
-
-        <section id="restaurant" class="section section--grey-bg section--restaurant ">
-            <header class="block__header">
-                <h2 class="section-title">Restaurants</h1>
-            </header>
-            <div class="block__content">
-                <div class="container">
-
-
-                    <div class="card new">
-                        <div class="image-wrapper">
-                            <img src="./images/restaurants/palette-du-gout.jpg" alt="">
+                <div class="block__content button--wrapper">
+                    <button class="btn btn--functionning">
+                        <div class="index">
+                            <span>1</span>
                         </div>
-                        <div class="card__content">
-                            <div class="card__content__text">
-                                <h3 class="card__content__text__title">La galette du goût</h3>
-                                <p class="card__content__text__location">Ménilmontant</p>
+                        <div class="btn--functionning__icon-box">
+                            <i class="fas fa-mobile-alt icon"></i>
+                        </div>
+
+                        <p class="btn--functionning__text">Choissisez un restaurant</p>
+                    </button>
+
+                    <button class="btn btn--functionning">
+                        <div class="index">
+                            <span>2</span>
+                        </div>
+                        <div class="btn--functionning__icon-box">
+                            <i class="fas fa-list-ul icon"></i>
+                        </div>
+                        <p class="btn--functionning__text">Composez votre menu</p>
+                    </button>
+
+                    <button class=" btn btn--functionning active">
+                        <div class="index">
+                            <span>3</span>
+                        </div>
+                        <div class="btn--functionning__icon-box">
+                            <i class="fas fa-store icon"></i>
+                        </div>
+                        <p class="btn--functionning__text">Dégustez au restaurant</p>
+                    </button>
+                </div>
+            </section>
+            <!-- #functionning  -->
+
+            <section id="restaurant" class="section section--grey-bg section--restaurant ">
+                <header class="block__header">
+                    <h2 class="section-title">Restaurants</h1>
+                </header>
+                <div class="block__content">
+                    <div class="container">
+                        <div class="card new">
+                            <div class="image-wrapper">
+                                <img src="./images/restaurants/palette-du-gout.jpg" alt="">
                             </div>
-                            <label class="icon icon--heart" id="favorite1">
-                                <input class="checkbox checkbox--heart" type="checkbox" for="favorite1">
-                                <i class="fas fa-heart"></i>
-                                <i class="far fa-heart"></i>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="card new">
-                        <div class="image-wrapper">
-                            <img src="./images/restaurants/la-note-enchatee.jpg" alt="">
-                        </div>
-
-                        <div class="card__content">
-                            <div class="card__content__text">
-                                <h3 class="card__content__text__title">La note enchantée</h3>
-                                <p class="card__content__text__location">Charonne</p>
+                            <div class="card__content">
+                                <div class="card__content__text">
+                                    <h3 class="card__content__text__title">La galette du goût</h3>
+                                    <p class="card__content__text__location">Ménilmontant</p>
+                                </div>
+                                <label class="icon icon--heart" id="favorite1">
+                                    <input class="checkbox checkbox--heart" type="checkbox" for="favorite1">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="far fa-heart"></i>
+                                </label>
                             </div>
-                            <label class="icon icon--heart" id="favorite2">
-                                <input class="checkbox checkbox--heart" type="checkbox" for="favorite2">
-                                <i class="fas fa-heart"></i>
-                                <i class="far fa-heart"></i>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image-wrapper">
-                            <img src="./images/restaurants/a-la-francaise.jpg" alt="">
                         </div>
 
-                        <div class="card__content">
-                            <div class="card__content__text">
-                                <h3 class="card__content__text__title">A la française</h3>
-                                <p class="card__content__text__location">Cité Rouge</p>
+                        <div class="card new">
+                            <div class="image-wrapper">
+                                <img src="./images/restaurants/la-note-enchatee.jpg" alt="">
                             </div>
-                            <label class="icon icon--heart" id="favorite3">
-                                <input class="checkbox checkbox--heart" type="checkbox" for="favorite3">
-                                <i class="fas fa-heart"></i>
-                                <i class="far fa-heart"></i>
-                            </label>
-                        </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="image-wrapper">
-                            <img src="./images/restaurants/delices-des-sens.jpg" alt="">
-                        </div>
-
-                        <div class="card__content">
-                            <div class="card__content__text">
-                                <h3 class="card__content__text__title">Le délice des sens</h3>
-                                <p class="card__content__text__location">Folie-Méricourt</p>
+                            <div class="card__content">
+                                <div class="card__content__text">
+                                    <h3 class="card__content__text__title">La note enchantée</h3>
+                                    <p class="card__content__text__location">Charonne</p>
+                                </div>
+                                <label class="icon icon--heart" id="favorite2">
+                                    <input class="checkbox checkbox--heart" type="checkbox" for="favorite2">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="far fa-heart"></i>
+                                </label>
                             </div>
-                            <label class="icon icon--heart" id="favorite4">
-                                <input class="checkbox checkbox--heart" type="checkbox" for="favorite4">
-                                <i class="fas fa-heart"></i>
-                                <i class="far fa-heart"></i>
-                            </label>
+                        </div>
+
+                        <div class="card">
+                            <div class="image-wrapper">
+                                <img src="./images/restaurants/a-la-francaise.jpg" alt="">
+                            </div>
+
+                            <div class="card__content">
+                                <div class="card__content__text">
+                                    <h3 class="card__content__text__title">A la française</h3>
+                                    <p class="card__content__text__location">Cité Rouge</p>
+                                </div>
+                                <label class="icon icon--heart" id="favorite3">
+                                    <input class="checkbox checkbox--heart" type="checkbox" for="favorite3">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="far fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="image-wrapper">
+                                <img src="./images/restaurants/delices-des-sens.jpg" alt="">
+                            </div>
+
+                            <div class="card__content">
+                                <div class="card__content__text">
+                                    <h3 class="card__content__text__title">Le délice des sens</h3>
+                                    <p class="card__content__text__location">Folie-Méricourt</p>
+                                </div>
+                                <label class="icon icon--heart" id="favorite4">
+                                    <input class="checkbox checkbox--heart" type="checkbox" for="favorite4">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="far fa-heart"></i>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
+        </div>
+        <!-- container--wrapper  -->
     </main>
     <footer>
         <div class="footer">

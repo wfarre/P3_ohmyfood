@@ -1,16 +1,31 @@
 
 .footer {
     padding: 5%;
-    // margin-top: 65px;
     background-color: rgb(53, 53, 53);
+    @include desktop-only{
+        padding: 2% 20%;
+        height: 120px;
+    }
 
     .company-title {
         @include font-title(20px, 400, white, $title-font);
         margin-bottom: 20px;
+        @include desktop-only{
+            text-align: center;
+            font-size: 30px;
+            margin:0;
+            margin-bottom: 40px;
+        }
     }
 
     &__menu {
         padding: 0;
+        @include desktop-only{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
 
         &__item {
             display: inline;
