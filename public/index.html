@@ -25,19 +25,26 @@
 </head>
 
 <body>
-    <header id="header" class="main-header ">
+    <!-- <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div> -->
+
+    <nav id="nav" class="nav">
 
         <div class="logo">
             <h4 class="company-title">ohmyfood</h1>
         </div>
         <div class="location">
-            <div class="icon icon-location">
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
+            <i class="fas fa-map-marker-alt icon-location"></i>
             <h3 class="loaction-txt">Paris, Belleville</h3>
         </div>
+    </nav>
+    <header id="header" class="main-header">
         <!-- <div class="container container--header"> -->
             <!-- <div class="heading"> -->
+                <div class="bg-img">
+                    <img src="./images/restaurants/delices-des-sens.jpg" alt="">
+                </div>
                 <div class="header-title">
                     <h2 class="header-title__main">Réservez le menu qui vous convient</h1>
                         <p class="header-title__sub">Découvrez des restaurants d'exception, sélectionnés par nos soins.
@@ -46,6 +53,7 @@
                 <div class="btn-wrapper main-header--btn-wrapper">
                     <button class="btn btn--gradient btn--explore">Explorez nos restaurants</button>
                 </div>
+                
             <!-- </div> -->
             <!-- <div class="carousel">
                 <div class="carousel__item">
@@ -68,6 +76,7 @@
 
     <main>
 
+       
         <div class="container container--wrapper">
             <section id="functionning" class="section section-functionning">
                 <header class="block__header">
@@ -126,8 +135,9 @@
                                 </div>
                                 <label class="icon icon--heart" id="favorite1">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite1">
-                                    <i class="fas fa-heart"></i>
-                                    <i class="far fa-heart"></i>
+                                    <i class="fas fa-heart filled"></i>
+                                    <div class="icon-hider"></div>
+                                    <i class="fas fa-heart empty"></i>
                                 </label>
                             </div>
                         </div>
@@ -144,8 +154,9 @@
                                 </div>
                                 <label class="icon icon--heart" id="favorite2">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite2">
-                                    <i class="fas fa-heart"></i>
-                                    <i class="far fa-heart"></i>
+                                    <i class="fas fa-heart filled"></i>
+                                    <div class="icon-hider"></div>
+                                    <i class="fas fa-heart empty"></i>
                                 </label>
                             </div>
                         </div>
@@ -162,8 +173,9 @@
                                 </div>
                                 <label class="icon icon--heart" id="favorite3">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite3">
-                                    <i class="fas fa-heart"></i>
-                                    <i class="far fa-heart"></i>
+                                    <i class="fas fa-heart filled"></i>
+                                    <div class="icon-hider"></div>
+                                    <i class="fas fa-heart empty"></i>
                                 </label>
                             </div>
                         </div>
@@ -180,8 +192,9 @@
                                 </div>
                                 <label class="icon icon--heart" id="favorite4">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite4">
-                                    <i class="fas fa-heart"></i>
-                                    <i class="far fa-heart"></i>
+                                    <i class="fas fa-heart filled"></i>
+                                    <div class="icon-hider"></div>
+                                    <i class="fas fa-heart empty"></i>
                                 </label>
                             </div>
                         </div>
@@ -202,7 +215,7 @@
 
             <ul class="footer__menu">
                 <li class="footer__menu__item">
-                    <a class="footer__menu__item__link" href="">
+                    <a class="footer__menu__item__link" href="#">
                         <div class="icon">
                             <i class="fas fa-utensils"></i>
                         </div>
@@ -210,7 +223,7 @@
                     </a>
                 </li>
                 <li class="footer__menu__item">
-                    <a class="footer__menu__item__link" href="">
+                    <a class="footer__menu__item__link" href="#">
                         <div class="icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
@@ -218,13 +231,13 @@
                     </a>
                 </li>
                 <li class="footer__menu__item">
-                    <a class="footer__menu__item__link" href="">
+                    <a class="footer__menu__item__link" href="#">
                         <p>Mentions légales</p>
                     </a>
 
                 </li>
                 <li class="footer__menu__item">
-                    <a class="footer__menu__item__link" href="">
+                    <a class="footer__menu__item__link" href="william.farre@gmail.com">
                         <p>Contact</p>
                     </a>
 

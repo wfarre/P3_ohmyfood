@@ -15,6 +15,14 @@
     }
     &:hover{
         cursor: pointer;
+        &::after{
+            content: " ";
+            @include box-sizing(100%, 100%, 0, absolute);
+            left: 0;
+            top: 0;
+            background-color: white;
+            opacity: 0.1;
+        }
     }
 
 
@@ -31,7 +39,6 @@
     }
     &__content {
         @include flexbox(row, space-between, center);
-        // align-content: center;
         overflow: hidden;
         background-color: white;
         min-height: 20%;
@@ -95,6 +102,20 @@
         @include flexbox(column, space-between);
         row-gap: 16px;
     }
+
+    @for $i from 1 through 4 {
+        .card:nth-child(#{$i}){
+            animation: appear 3s;
+            animation-fill-mode: forwards;  
+            animation-delay: $i*200ms
+        }
+    }     
+
+    // .block__content::nth-child(1){
+    //     background-color: blue;
+    // }
+
+    
     
     .card{
         opacity: 0;
@@ -104,8 +125,9 @@
         align-content: center;
         height: 70px;
         background-color: white;
-        animation: appear 3s;
-        animation-fill-mode: forwards;       
+        // animation: appear 3s;
+        // animation-fill-mode: forwards;  
+      
         &__content{
             @include box-sizing(100%, 90%);
             padding: 0 5%;

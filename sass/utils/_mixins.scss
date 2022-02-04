@@ -8,11 +8,12 @@
     padding: $padding;
 }
 
-@mixin box-sizing($height, $width, $border-radius:0, $position:relative) {
+@mixin box-sizing($height, $width, $border-radius:0, $position:relative, $background:transparent) {
     position: $position;
     height: $height;
     width: $width;
     border-radius: $border-radius;
+    background-color: $background;
 }
 
 @mixin font-title($font-size, $font-weight:400, $color:black, $font-family:$main-font){

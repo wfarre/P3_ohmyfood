@@ -19,48 +19,85 @@
 
 
 body {
+    @include box-sizing(100%, 100%);
     margin: 0;
     font-size: 16px;
     font-family: $main-font;
 }
 
-.carousel {
+.loader-wrapper{
+    @include box-sizing(100%, 100%, 0, absolute);
     display: flex;
-    width: 55%;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    position: relative;
-    overflow: auto;
-    scroll-snap-type: x mandatory;
-    flex: none;
-}
+    justify-content: center;
+    // align-items: center;
+    // height: ;
+    background-color: white;
+    z-index: 999;
+    // opacity: 0.7;
+    .loader{
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        // left: 50%;
+        top:40%;
+        transform: translateY(-50%);
+        border: 16px solid $tertiary-color;
+        border-right: 16px solid $primary-color ;
+        border-radius: 100%;
+        // transform: rotateZ(45deg);
+        animation: load 1.5s infinite ease-out;
+        // opacity: 1;
 
-.carousel__item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: start;
-    text-align: center;
-    scroll-snap-align: center;
-    flex: none;
-    z-index: 0;
-
-    img {
-        position: absolute;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        
     }
-
 }
 
-.carousel__item:nth-child(2) {
-    background-color: green;
+@keyframes load {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+    
 }
 
-.carousel__item:nth-child(3) {
-    background-color: blue;
-}
+// .carousel {
+//     display: flex;
+//     width: 55%;
+//     flex-direction: row;
+//     flex-wrap: no-wrap;
+//     position: relative;
+//     overflow: auto;
+//     scroll-snap-type: x mandatory;
+//     flex: none;
+// }
+
+// .carousel__item {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     scroll-snap-align: start;
+//     text-align: center;
+//     scroll-snap-align: center;
+//     flex: none;
+//     z-index: 0;
+
+//     img {
+//         position: absolute;
+//         object-fit: cover;
+//         top: 0;
+//         left: 0;
+//         height: 100%;
+//         width: 100%;
+        
+//     }
+
+// }
+
+// .carousel__item:nth-child(2) {
+//     background-color: green;
+// }
+
+// .carousel__item:nth-child(3) {
+//     background-color: blue;
+// }
