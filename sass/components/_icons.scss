@@ -8,10 +8,12 @@
     @include desktop-only {
         &:hover {
             cursor: pointer;
+
             &>.icon-hider {
                 animation: fill-heart 3s ease-in-out forwards;
             }
-            &>.fas.fa-heart.empty{
+
+            &>.fas.fa-heart.empty {
                 -webkit-text-stroke-color: transparent;
                 transition-delay: 2.5s;
             }
@@ -23,7 +25,6 @@
     .icon-hider {
         @include box-sizing(200%, 200%, 35%, absolute);
         background-color: white;
-        // bottom: -100%;
         left: -50%;
         bottom: 0;
         z-index: 5;
@@ -36,21 +37,20 @@
         top: 0;
         left: 0;
         background: linear-gradient($primary-color, $secondary-color);
-        // -webkit-text-stroke: 4px ;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         overflow: hidden;
         z-index: 0;
-        
-        &.empty{
 
-            background:transparent;
+        &.empty {
+
+            background: transparent;
             -webkit-text-fill-color: transparent;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: black;
-z-index: 999;
-transition: -webkit-text-stroke-color 500ms;
-transition-delay: 0;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            z-index: 999;
+            transition: -webkit-text-stroke-color 500ms;
+            transition-delay: 0;
 
         }
 
