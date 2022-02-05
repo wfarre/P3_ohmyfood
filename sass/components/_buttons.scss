@@ -30,7 +30,8 @@
     &--functionning{
         @include button-layout($bg-color, black, 16px, 20px, 0 8% );
         @include flexbox(row, flex-start, center);
-        @include box-sizing(80px, 100%, 20px);
+        // width = 100% - margin-left(wrapper) - padding(section)
+        @include box-sizing(80px, 85% , 20px);
         &__icon-box{
             @include flexbox(row, flex-start, center);
             @include box-sizing(100%, 50px);

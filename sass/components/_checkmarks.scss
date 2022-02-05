@@ -24,6 +24,9 @@ input:checked~.checkmark-wrapper {
 
     .checkmark-icon {
         animation: rotate-icon 400ms forwards;
+        // @include desktop-only{
+        //     animation: none;
+        // }
     }
 }
 

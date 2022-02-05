@@ -1,10 +1,10 @@
 .nav{
     position: relative;
 
-    @include desktop-only{
-        @include flexbox(row, space-between);
-        padding: 0 5%;
-    }
+    // @include desktop-only{
+    //     @include flexbox(row, space-between);
+    //     padding: 0 5%;
+    // }
 
     .logo{
         @include flexbox(row, center, center);
@@ -12,10 +12,10 @@
         .company-title {
             @include font-title(30px, 400, black, $title-font );
         }
-        @include desktop-only{
-            width: 50%;
-            justify-content: flex-start;
-        }
+        // @include desktop-only{
+        //     width: 50%;
+        //     justify-content: flex-start;
+        // }
     }
 
     .location {
@@ -24,15 +24,7 @@
         font-size: 18px;
         column-gap: 18px;
         box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
-     
 
-        .checkbox-research:checked > .location__input{
-            width: 0%;
-        }
-        @include desktop-only{
-            width: 50%;
-            background-color: transparent;
-        }
     }
 
     .icon-arrow-wrapper{
