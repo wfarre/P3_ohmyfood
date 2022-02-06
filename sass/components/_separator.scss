@@ -1,0 +1,15 @@
+.separator{
+    display: none;
+    position: absolute;
+    height: 200px;
+    width: 1px;
+    background-color: rgb(235, 235, 235);
+    top: 50%;
+    // left: -9px;
+    // right: 0;
+    transform: translateY(-50%) translateX(-1.5rem);
+    z-index: 10;
+    @include desktop-only{
+        display: block;
+    }
+}

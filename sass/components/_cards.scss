@@ -1,236 +1,303 @@
-%box-shadow{
-    box-shadow:  0px 5px 16px $location-bg-color;
-}
-
 .card {
-    text-decoration: none;
-    color: black;
-    @include box-sizing(250px, 100% , 10px);
+    @extend %box-shadow-style;
     @include flexbox(column, flex-start);
+    @include box-sizing(250px, 100%, 10px);
     overflow: hidden;
-    @extend %box-shadow;
-    @include desktop-only{
-        width: 30%;
-    }
-    &:hover{
+    background-color: white;
+
+
+
+
+    &:hover {
         cursor: pointer;
-        &::after{
+
+        &::after {
             content: " ";
             @include box-sizing(100%, 100%, 0, absolute);
-            left: 0;
-            top: 0;
+            @include absolute-positionning;
             background-color: white;
             opacity: 0.1;
         }
     }
 
-
-
-    &.new::before {
-        content: "Nouveau";
-        @include flexbox(row, center,center);
-        @include box-sizing(25px, 80px, 0, absolute);
-        @include font-title(12px, 400 , rgb(58, 130, 102));
-        background-color: $tertiary-color;
-        box-shadow: rgb(36, 36, 36) 0px 6px 6px;
-
-        z-index: 1;
-        top: 15px;
-        right: 3%;
-    }
     &__content {
         @include flexbox(row, space-between, center);
-        overflow: hidden;
-        background-color: white;
-        min-height: 20%;
-        padding: 18px 5%;
+        padding: 0 5%;
+
         &__text {
             @include flexbox(column, space-between);
+
             &__title {
-                @include font-title(18px, bold);
-                margin:0;
-                margin-bottom: 5px;
-            }
-            &__location{
-                margin:0;
+                margin: 0;
+
             }
 
+            &__info {
+                margin: 0;
+
+            }
         }
     }
-}
 
+    &--home {
+        text-decoration: none;
+        color: black;
 
-
-
-
-
-.main--menu{
-    border-radius: 30px 30px 0 0;
-    background-color: $bg-color;
-    padding-bottom: 65px;
-
-
-    .menu{
-        width: 100%;
-        position: relative;
-    }
-    .menu__content{
-        padding: 0 4%;
-        border-radius: 30px 30px 0 0;
-        background-color: $bg-color;
-        position: relative;
-        top:-50px;
-      
-    }
-
-    .menu-section{
-        padding:0;
-        margin-bottom: 50px;
-        @include desktop-only{
+        @include desktop-only {
             width: 30%;
         }
-    }
-    .main__header{
-        display: inline-flex;
-        justify-content: space-between;
-        width: 100%;
-        @include font-title(16px, bold, black , $title-font);
-        padding-top: 18px;
-    }
 
-    .image-wrapper{
-        @include box-sizing(250px, 100%);
-    }
+        &.new::before {
+            content: "Nouveau";
+            @include flexbox(row, center, center);
+            @include box-sizing(25px, 80px, 0, absolute);
+            @include font-title(12px, 400, rgb(58, 130, 102));
+            background-color: $tertiary-color;
+            box-shadow: rgb(36, 36, 36) 0px 6px 6px;
 
-    .block__content{
-        @include flexbox(column, space-between);
-        row-gap: 16px;
-    }
-
-    @for $i from 1 through 4 {
-        .card:nth-child(#{$i}){
-            animation: tile-apparition 3s;
-            animation-fill-mode: forwards;  
-            animation-delay: $i*200ms
+            z-index: 1;
+            @include absolute-positionning(15px, auto);
+            right: 3%;
         }
-    }     
 
+        .card__content {
+            @include flexbox(row, space-between, center);
+            overflow: hidden;
+            min-height: 20%;
+            padding: 18px 5%;
 
-    .icon-hider{
-        background-color: $bg-color;
+            &__text {
+                &__title {
+                    @include font-title(18px, bold);
+                    margin-bottom: 5px;
+                }
+
+            }
+        }
+
     }
-    
-    .card{
+
+    &--menu {
+        @include box-sizing(70px, 100%, 10px);
         opacity: 0;
         transform: translateY(50px);
-        position: relative;
         align-content: center;
-        height: 70px;
-        background-color: white;
-        @include desktop-only{
+
+        @include desktop-only {
             width: 100%;
-            &:hover{
-                cursor: pointer;
-                &>.card__content{
+            &:hover {
+                &>.card__content {
                     width: calc(100% - 10% - 60px);
                 }
-                &>.card__content > .card__content__text{
+                &>.card__content>.card__content__text {
                     width: calc(100% - 12%);
                 }
-                &>.checkmark-wrapper {
+                &>.icon-wrapper--checkmark {
                     width: 60px;
                     visibility: visible;
                     z-index: 100;
-                
-                    .checkmark-icon {
+
+                    .icon--checkmark {
                         animation: rotate-icon 400ms forwards;
                     }
                 }
             }
         }
 
-        &__content{
+        .card__content {
             @include box-sizing(100%, 90%);
-            padding: 0 5%;
             transition: width 1s;
-            flex-wrap:nowrap;
+            flex-wrap: nowrap;
             margin: 14px 0;
-            // @include desktop-only{
-            //     @include flexbox(column, space-between);
-            // }
-            &__text{
-                @include flexbox(column, space-between); 
-                @include box-sizing(100%, 90%);   
-                // @include desktop-only{
-                //     align-items: center;
-                //     justify-content: flex-start;
-                // }          
-                &__title{
-                    margin: 0;
+
+            &__text {
+                @include box-sizing(100%, 90%);         
+                &__title {
                     @include font-title(16px);
                     @extend %hidden-text;
                 }
-                &__info{
+                &__info {
                     @extend %hidden-text;
                     font-size: 14px;
                     font-weight: 300;
-                    margin: 0;
                 }
             }
-            .price{
+
+            .price {
                 @include font-title(14px);
                 align-self: flex-end;
-                // @include desktop-only{
-                //     align-self: center;
-                // }
             }
         }
-    
-        input{
+
+        input {
             display: none;
         }
-       
-    
-    }
-    
-    input:checked ~ .card__content{
-        width: calc(100% - 10% - 60px);
-    }
 
-    input:checked ~ .card__content > .card__content__text{
-        width: calc(100% - 12%);
-       
-    }
-    
+        input:checked~.card__content {
+            width: calc(100% - 10% - 60px);
+        }
 
-}
+        input:checked~.card__content>.card__content__text {
+            width: calc(100% - 12%);
 
-.menu-section__header{
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    // padding: 0 5%;
-    h3{
-        @include font-title(16px);
-        text-transform: uppercase;
-        margin: 0;
-    }
-    &::before{
-        content: " ";
-        @include box-sizing(3px, 45px, 0, absolute);
-        background-color: $tertiary-color;
-        bottom: 0;
+        }
     }
 }
 
-@keyframes tile-apparition {
-    0%{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-}
+// .card {
+//     @extend %box-shadow-style;
+//     text-decoration: none;
+//     color: black;
+//     @include box-sizing(250px, 100%, 10px);
+//     @include flexbox(column, flex-start);
+//     overflow: hidden;
+
+//     @include desktop-only {
+//         width: 30%;
+//     }
+
+//     &:hover {
+//         cursor: pointer;
+
+//         &::after {
+//             content: " ";
+//             @include box-sizing(100%, 100%, 0, absolute);
+//             @include absolute-positionning;
+//             background-color: white;
+//             opacity: 0.1;
+//         }
+//     }
+
+
+
+//     &.new::before {
+//         content: "Nouveau";
+//         @include flexbox(row, center, center);
+//         @include box-sizing(25px, 80px, 0, absolute);
+//         @include font-title(12px, 400, rgb(58, 130, 102));
+//         background-color: $tertiary-color;
+//         box-shadow: rgb(36, 36, 36) 0px 6px 6px;
+
+//         z-index: 1;
+//         @include absolute-positionning(15px, auto);
+//         right: 3%;
+//     }
+
+//     &__content {
+//         @include flexbox(row, space-between, center);
+//         overflow: hidden;
+//         background-color: white;
+//         min-height: 20%;
+//         padding: 18px 5%;
+
+//         &__text {
+//             @include flexbox(column, space-between);
+
+//             &__title {
+//                 @include font-title(18px, bold);
+//                 margin: 0;
+//                 margin-bottom: 5px;
+//             }
+
+//             &__info {
+//                 margin: 0;
+//             }
+
+//         }
+//     }
+
+// }
+
+
+// .main--menu {
+//     .card {
+//         opacity: 0;
+//         transform: translateY(50px);
+//         position: relative;
+//         align-content: center;
+//         height: 70px;
+//         background-color: white;
+
+//         @include desktop-only {
+//             width: 100%;
+
+//             &:hover {
+//                 cursor: pointer;
+
+//                 &>.card__content {
+//                     width: calc(100% - 10% - 60px);
+//                 }
+
+//                 &>.card__content>.card__content__text {
+//                     width: calc(100% - 12%);
+//                 }
+
+//                 &>.checkmark-wrapper {
+//                     width: 60px;
+//                     visibility: visible;
+//                     z-index: 100;
+
+//                     .checkmark-icon {
+//                         animation: rotate-icon 400ms forwards;
+//                     }
+//                 }
+//             }
+//         }
+
+//         &__content {
+//             @include box-sizing(100%, 90%);
+//             padding: 0 5%;
+//             transition: width 1s;
+//             flex-wrap: nowrap;
+//             margin: 14px 0;
+
+//             // @include desktop-only{
+//             //     @include flexbox(column, space-between);
+//             // }
+//             &__text {
+//                 @include flexbox(column, space-between);
+//                 @include box-sizing(100%, 90%);
+
+//                 // @include desktop-only{
+//                 //     align-items: center;
+//                 //     justify-content: flex-start;
+//                 // }          
+//                 &__title {
+//                     margin: 0;
+//                     @include font-title(16px);
+//                     @extend %hidden-text;
+//                 }
+
+//                 &__info {
+//                     @extend %hidden-text;
+//                     font-size: 14px;
+//                     font-weight: 300;
+//                     margin: 0;
+//                 }
+//             }
+
+//             .price {
+//                 @include font-title(14px);
+//                 align-self: flex-end;
+//                 // @include desktop-only{
+//                 //     align-self: center;
+//                 // }
+//             }
+//         }
+
+//         input {
+//             display: none;
+//         }
+
+//         input:checked~.card__content {
+//             width: calc(100% - 10% - 60px);
+//         }
+
+//         input:checked~.card__content>.card__content__text {
+//             width: calc(100% - 12%);
+
+//         }
+
+//     }
+
+// }

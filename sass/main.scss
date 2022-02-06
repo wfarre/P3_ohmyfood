@@ -1,22 +1,30 @@
 @import "./base/colors";
 @import "./base/fonts";
+
+
 @import "./utils/breakpoints";
 
 @import "./utils/mixins";
 @import "./utils/placeholders.scss";
-
 @import "./utils/animations";
+
+
 @import "./components/image";
 @import "./components/icons";
 @import "./components/buttons";
-@import "./components/cards";
-@import "./base/sections";
-@import "./base/nav";
-@import "./layout/containers";
-@import "./base/footer";
 @import "./components/checkmarks";
-@import "./base/header";
+@import "./components/cards";
+@import "./components/loader";
+@import "./components/separator";
 
+
+@import "./layout/sections";
+@import "./layout/nav";
+@import "./layout/containers";
+@import "./layout/footer";
+@import "./layout/header";
+
+@import "./pages/menu__page";
 
 
 body {
@@ -26,48 +34,8 @@ body {
     font-family: $main-font;
 }
 
-.loader-wrapper {
-    @include box-sizing(100%, 100%, 0, absolute);
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    z-index: 999;
-    animation: fadeout 2s forwards;
 
-    .loader {
-        position: fixed;
-        height: 100px;
-        width: 100px;
-        top: 40%;
-        transform: translateY(-50%);
-        border: 16px solid $tertiary-color;
-        border-right: 16px solid $primary-color;
-        border-radius: 100%;
-        animation: load 1.5s infinite ease-out;
-    }
-}
 
-@keyframes load {
-    0% {
-        transform: rotateZ(0deg);
-    }
-
-    100% {
-        transform: rotateZ(360deg);
-    }
-
-}
-
-@keyframes fadeout {
-
-    // 0%{
-    //     display: flex;
-    // }
-    100% {
-        opacity: 0;
-        z-index: -1;
-    }
-}
 
     // .carousel {
     //     display: flex;
@@ -115,18 +83,6 @@ body {
     //     display: absolute;
     // }
 
-    .separator{
-        display: none;
-        position: absolute;
-        height: 200px;
-        width: 1px;
-        background-color: rgb(235, 235, 235);
-        top: 50%;
-        // left: -9px;
-        // right: 0;
-        transform: translateY(-50%) translateX(-1.5rem);
-        z-index: 10;
-        @include desktop-only{
-            display: block;
-        }
-    }
+   
+    
+    

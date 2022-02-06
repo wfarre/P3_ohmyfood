@@ -35,8 +35,7 @@
 
     .bg-img{
         @include box-sizing(100%, 100%, 0, absolute);
-        left:0;
-        top:0;
+      @include absolute-positionning;
         display: none;
         @include desktop-only{
             display: inline;
@@ -46,8 +45,7 @@
         img{
             @include box-sizing(100%, 100%, 0, absolute);
             object-fit: cover;
-            left:0;
-            top:0;
+            @include absolute-positionning;
             filter: blur(8px)  brightness(80%);
             background-size: cover;
         }

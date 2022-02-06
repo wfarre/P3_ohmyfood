@@ -1,12 +1,57 @@
-.main--menu .card__content__text__info, .main--menu .card__content__text__title {
+.link {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+.link:hover {
+  cursor: pointer;
+}
+
+.card--menu .card__content__text__info, .card--menu .card__content__text__title {
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+.card, .btn--functionning, .btn--explore {
+  box-shadow: 0px 5px 16px #c6c6c6;
+}
+
 @keyframes fill-heart {
   100% {
     transform: translateY(-50%) rotateZ(540deg);
+  }
+}
+@keyframes load {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes tile-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rotate-icon {
+  0% {
+    transform: rotateZ(-180deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
   }
 }
 .image-wrapper {
@@ -25,29 +70,58 @@
   object-fit: cover;
 }
 
-.icon {
-  position: relative;
+.icon--checkmark {
+  color: white;
+  transform: rotateZ(-180deg);
+}
+.icon--heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  z-index: 0;
+}
+.icon--heart--empty {
+  background: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  z-index: 999;
+  transition: opacity 500ms;
+  transition-delay: 0;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  overflow: hidden;
+}
+.icon-wrapper--heart {
   position: relative;
   height: 24px;
   width: 24px;
   border-radius: 0;
   background-color: transparent;
-  font-size: 24px;
-  align-self: center;
 }
 @media all and (min-width: 993px) {
-  .icon:hover {
+  .icon-wrapper--heart:hover {
     cursor: pointer;
   }
-  .icon:hover > .icon-hider {
+  .icon-wrapper--heart:hover > .icon-hider {
     animation: fill-heart 3s ease-in-out forwards;
   }
-  .icon:hover > .fas.fa-heart.empty {
-    -webkit-text-stroke-color: transparent;
+  .icon-wrapper--heart:hover > .icon--heart--empty {
+    opacity: 0;
     transition-delay: 2.5s;
   }
 }
-.icon .icon-hider {
+.icon-wrapper--heart .icon-hider {
   position: absolute;
   height: 200%;
   width: 200%;
@@ -58,46 +132,40 @@
   bottom: 0;
   z-index: 5;
 }
-.icon .fas.fa-heart {
+.icon-wrapper--checkmark {
   position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-color: #99E2D0;
+  right: 0;
   top: 0;
-  left: 0;
-  background: linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  visibility: hidden;
   overflow: hidden;
-  z-index: 0;
-}
-.icon .fas.fa-heart.empty {
-  background: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  z-index: 999;
-  transition: -webkit-text-stroke-color 500ms;
-  transition-delay: 0;
+  transition: ease-out width 1s;
 }
 
 .btn--explore {
   position: relative;
-  box-shadow: 0px 5px 16px #eaeaea;
-  border: none;
+  padding: 15px 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
   font-size: 16px;
+  border: none;
   border-radius: 40px;
-  padding: 15px 25px;
 }
 .btn--explore:before {
   content: " ";
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: white;
-  left: 0;
-  top: 0;
-  box-shadow: 0px 5px 16px black;
   border-radius: 40px;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 5px 16px black;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -108,13 +176,12 @@
   opacity: 0.3;
 }
 .btn--functionning {
-  box-shadow: 0px 5px 16px #eaeaea;
-  border: none;
+  padding: 0 8%;
   background: #f6f6f6;
   color: black;
   font-size: 16px;
+  border: none;
   border-radius: 20px;
-  padding: 0 8%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -124,6 +191,11 @@
   width: 85%;
   border-radius: 20px;
   background-color: transparent;
+}
+@media all and (min-width: 993px) {
+  .btn--functionning {
+    padding: 0 3%;
+  }
 }
 .btn--functionning__icon-box {
   display: flex;
@@ -162,35 +234,57 @@
   width: 100%;
   border-radius: 20px;
   background-color: transparent;
-  left: 0;
   top: 0;
+  left: 0;
   background-color: #9356DC;
   opacity: 0.1;
   z-index: 1;
 }
 
-.card {
-  box-shadow: 0px 5px 16px #eaeaea;
+input:checked ~ .icon-wrapper--checkmark {
+  width: 60px;
+  visibility: visible;
+  z-index: 100;
+}
+input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
+  animation: rotate-icon 400ms forwards;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .icon-hider {
+  animation: fill-heart 2s ease-in-out forwards;
+}
+@media all and (min-width: 993px) {
+  .checkbox:checked ~ .icon-hider {
+    animation: none;
+    opacity: 0;
+  }
+}
+.checkbox:checked ~ .icon--heart--empty {
+  opacity: 0;
+  transition-delay: 1.5s;
+}
+@media all and (min-width: 993px) {
+  .checkbox:checked ~ .icon--heart--empty {
+    transition: none;
+  }
 }
 
 .card {
-  text-decoration: none;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   position: relative;
   height: 250px;
   width: 100%;
   border-radius: 10px;
   background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
   overflow: hidden;
-}
-@media all and (min-width: 993px) {
-  .card {
-    width: 30%;
-  }
+  background-color: white;
 }
 .card:hover {
   cursor: pointer;
@@ -202,12 +296,40 @@
   width: 100%;
   border-radius: 0;
   background-color: transparent;
-  left: 0;
   top: 0;
+  left: 0;
   background-color: white;
   opacity: 0.1;
 }
-.card.new::before {
+.card__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+.card__content__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.card__content__text__title {
+  margin: 0;
+}
+.card__content__text__info {
+  margin: 0;
+}
+.card--home {
+  text-decoration: none;
+  color: black;
+}
+@media all and (min-width: 993px) {
+  .card--home {
+    width: 30%;
+  }
+}
+.card--home.new::before {
   content: "Nouveau";
   display: flex;
   flex-direction: row;
@@ -226,223 +348,138 @@
   box-shadow: #242424 0px 6px 6px;
   z-index: 1;
   top: 15px;
+  left: auto;
   right: 3%;
 }
-.card__content {
+.card--home .card__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background-color: white;
   min-height: 20%;
   padding: 18px 5%;
 }
-.card__content__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-.card__content__text__title {
+.card--home .card__content__text__title {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: black;
-  margin: 0;
   margin-bottom: 5px;
 }
-.card__content__text__location {
-  margin: 0;
-}
-
-.main--menu {
-  border-radius: 30px 30px 0 0;
-  background-color: #f6f6f6;
-  padding-bottom: 65px;
-}
-.main--menu .menu {
-  width: 100%;
+.card--menu {
   position: relative;
-}
-.main--menu .menu__content {
-  padding: 0 4%;
-  border-radius: 30px 30px 0 0;
-  background-color: #f6f6f6;
-  position: relative;
-  top: -50px;
-}
-.main--menu .menu-section {
-  padding: 0;
-  margin-bottom: 50px;
-}
-@media all and (min-width: 993px) {
-  .main--menu .menu-section {
-    width: 30%;
-  }
-}
-.main--menu .main__header {
-  display: inline-flex;
-  justify-content: space-between;
+  height: 70px;
   width: 100%;
-  font-size: 16px;
-  font-family: "Shrikhand", cursive;
-  font-weight: bold;
-  color: black;
-  padding-top: 18px;
-}
-.main--menu .image-wrapper {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  border-radius: 0;
+  border-radius: 10px;
   background-color: transparent;
-}
-.main--menu .block__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  row-gap: 16px;
-}
-.main--menu .card:nth-child(1) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 200ms;
-}
-.main--menu .card:nth-child(2) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 400ms;
-}
-.main--menu .card:nth-child(3) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 600ms;
-}
-.main--menu .card:nth-child(4) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 800ms;
-}
-.main--menu .icon-hider {
-  background-color: #f6f6f6;
-}
-.main--menu .card {
   opacity: 0;
   transform: translateY(50px);
-  position: relative;
   align-content: center;
-  height: 70px;
-  background-color: white;
 }
 @media all and (min-width: 993px) {
-  .main--menu .card {
+  .card--menu {
     width: 100%;
   }
-  .main--menu .card:hover {
-    cursor: pointer;
-  }
-  .main--menu .card:hover > .card__content {
+  .card--menu:hover > .card__content {
     width: calc(90% - 60px);
   }
-  .main--menu .card:hover > .card__content > .card__content__text {
+  .card--menu:hover > .card__content > .card__content__text {
     width: 88%;
   }
-  .main--menu .card:hover > .checkmark-wrapper {
+  .card--menu:hover > .icon-wrapper--checkmark {
     width: 60px;
     visibility: visible;
     z-index: 100;
   }
-  .main--menu .card:hover > .checkmark-wrapper .checkmark-icon {
+  .card--menu:hover > .icon-wrapper--checkmark .icon--checkmark {
     animation: rotate-icon 400ms forwards;
   }
 }
-.main--menu .card__content {
+.card--menu .card__content {
   position: relative;
   height: 100%;
   width: 90%;
   border-radius: 0;
   background-color: transparent;
-  padding: 0 5%;
   transition: width 1s;
   flex-wrap: nowrap;
   margin: 14px 0;
 }
-.main--menu .card__content__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+.card--menu .card__content__text {
   position: relative;
   height: 100%;
   width: 90%;
   border-radius: 0;
   background-color: transparent;
 }
-.main--menu .card__content__text__title {
-  margin: 0;
+.card--menu .card__content__text__title {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: black;
 }
-.main--menu .card__content__text__info {
+.card--menu .card__content__text__info {
   font-size: 14px;
   font-weight: 300;
-  margin: 0;
 }
-.main--menu .card__content .price {
+.card--menu .card__content .price {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: black;
   align-self: flex-end;
 }
-.main--menu .card input {
+.card--menu input {
   display: none;
 }
-.main--menu input:checked ~ .card__content {
+.card--menu input:checked ~ .card__content {
   width: calc(90% - 60px);
 }
-.main--menu input:checked ~ .card__content > .card__content__text {
+.card--menu input:checked ~ .card__content > .card__content__text {
   width: 88%;
 }
 
-.menu-section__header {
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-.menu-section__header h3 {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: black;
-  text-transform: uppercase;
-  margin: 0;
-}
-.menu-section__header::before {
-  content: " ";
+.loader-wrapper {
   position: absolute;
-  height: 3px;
-  width: 45px;
+  height: 100%;
+  width: 100%;
   border-radius: 0;
   background-color: transparent;
-  background-color: #99E2D0;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 999;
+  animation: fadeout 2s forwards;
+}
+.loader-wrapper .loader {
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  top: 40%;
+  transform: translateY(-50%);
+  border: 16px solid #99E2D0;
+  border-right: 16px solid #9356DC;
+  border-radius: 100%;
+  animation: load 1.5s infinite ease-out;
 }
 
-@keyframes tile-apparition {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+.separator {
+  display: none;
+  position: absolute;
+  height: 200px;
+  width: 1px;
+  background-color: #ebebeb;
+  top: 50%;
+  transform: translateY(-50%) translateX(-1.5rem);
+  z-index: 10;
+}
+@media all and (min-width: 993px) {
+  .separator {
+    display: block;
   }
 }
+
 .section-title {
   margin-bottom: 25px;
 }
@@ -544,8 +581,6 @@
   box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
 }
 .nav .icon-arrow-wrapper {
-  text-decoration: none;
-  color: black;
   position: absolute;
   height: 100%;
   width: 30px;
@@ -555,9 +590,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
-  left: 24px;
   top: 0;
+  left: 24px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
   z-index: 3;
 }
 .nav .icon-arrow-wrapper:hover {
@@ -663,64 +700,6 @@
   margin-top: 0;
 }
 
-.checkmark-wrapper {
-  position: absolute;
-  height: 100%;
-  width: 0;
-  border-radius: 0;
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #99E2D0;
-  visibility: hidden;
-  right: 0;
-  top: 0;
-  transition: ease-out width 1s;
-  overflow: hidden;
-}
-.checkmark-wrapper .checkmark-icon {
-  color: white;
-  font-size: 24px;
-  transform: rotateZ(-180deg);
-}
-
-input:checked ~ .checkmark-wrapper {
-  width: 60px;
-  visibility: visible;
-  z-index: 100;
-}
-input:checked ~ .checkmark-wrapper .checkmark-icon {
-  animation: rotate-icon 400ms forwards;
-}
-
-.checkbox {
-  display: none;
-}
-
-.checkbox:checked ~ .icon-hider {
-  animation: fill-heart 2s ease-in-out forwards;
-}
-@media all and (min-width: 993px) {
-  .checkbox:checked ~ .icon-hider {
-    animation: none;
-    opacity: 0;
-  }
-}
-.checkbox:checked ~ .fas.fa-heart.empty {
-  -webkit-text-stroke-color: transparent;
-  transition-delay: 1.5s;
-}
-
-@keyframes rotate-icon {
-  0% {
-    transform: rotateZ(-180deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
-  }
-}
 .main-header {
   position: relative;
   background-color: #f6f6f6;
@@ -765,8 +744,8 @@ input:checked ~ .checkmark-wrapper .checkmark-icon {
   width: 100%;
   border-radius: 0;
   background-color: transparent;
-  left: 0;
   top: 0;
+  left: 0;
   display: none;
 }
 @media all and (min-width: 993px) {
@@ -781,10 +760,107 @@ input:checked ~ .checkmark-wrapper .checkmark-icon {
   border-radius: 0;
   background-color: transparent;
   object-fit: cover;
-  left: 0;
   top: 0;
+  left: 0;
   filter: blur(8px) brightness(80%);
   background-size: cover;
+}
+
+.main--menu {
+  border-radius: 30px 30px 0 0;
+  background-color: #f6f6f6;
+  padding-bottom: 65px;
+}
+.main--menu .menu {
+  width: 100%;
+  position: relative;
+}
+.main--menu .menu__content {
+  padding: 0 4%;
+  border-radius: 30px 30px 0 0;
+  background-color: #f6f6f6;
+  position: relative;
+  top: -50px;
+}
+.main--menu .menu-section {
+  padding: 0;
+  margin-bottom: 50px;
+}
+@media all and (min-width: 993px) {
+  .main--menu .menu-section {
+    width: 30%;
+  }
+}
+.main--menu .main__header {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Shrikhand", cursive;
+  font-weight: bold;
+  color: black;
+  padding-top: 18px;
+}
+.main--menu .image-wrapper {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 0;
+  background-color: transparent;
+}
+.main--menu .block__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  row-gap: 16px;
+}
+.main--menu .card:nth-child(1) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+}
+.main--menu .card:nth-child(2) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
+}
+.main--menu .card:nth-child(3) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
+}
+.main--menu .card:nth-child(4) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 800ms;
+}
+.main--menu .icon-hider {
+  background-color: #f6f6f6;
+}
+
+.menu-section__header {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.menu-section__header h3 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: black;
+  text-transform: uppercase;
+  margin: 0;
+}
+.menu-section__header::before {
+  content: " ";
+  position: absolute;
+  height: 3px;
+  width: 45px;
+  border-radius: 0;
+  background-color: transparent;
+  background-color: #99E2D0;
+  bottom: 0;
 }
 
 body {
@@ -796,60 +872,6 @@ body {
   margin: 0;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-}
-
-.loader-wrapper {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 0;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  z-index: 999;
-  animation: fadeout 2s forwards;
-}
-.loader-wrapper .loader {
-  position: fixed;
-  height: 100px;
-  width: 100px;
-  top: 40%;
-  transform: translateY(-50%);
-  border: 16px solid #99E2D0;
-  border-right: 16px solid #9356DC;
-  border-radius: 100%;
-  animation: load 1.5s infinite ease-out;
-}
-
-@keyframes load {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-@keyframes fadeout {
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-.separator {
-  display: none;
-  position: absolute;
-  height: 200px;
-  width: 1px;
-  background-color: #ebebeb;
-  top: 50%;
-  transform: translateY(-50%) translateX(-1.5rem);
-  z-index: 10;
-}
-@media all and (min-width: 993px) {
-  .separator {
-    display: block;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */

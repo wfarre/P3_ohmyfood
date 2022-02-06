@@ -1,32 +1,12 @@
-// chechemark for menu selection
-.checkmark-wrapper {
-    @include box-sizing(100%, 0, 0, absolute);
-    @include flexbox(row, center, center);
-    background-color: $tertiary-color;
-    visibility: hidden;
-    right: 0;
-    top: 0;
-    transition: ease-out width 1s;
-    overflow: hidden;
+// checkmark for menu selection
 
-    .checkmark-icon {
-        color: white;
-        font-size: 24px;
-        transform: rotateZ(-180deg);
 
-    }
-}
-
-input:checked~.checkmark-wrapper {
+input:checked~.icon-wrapper--checkmark {
     width: 60px;
     visibility: visible;
     z-index: 100;
-
-    .checkmark-icon {
+    .icon--checkmark {
         animation: rotate-icon 400ms forwards;
-        // @include desktop-only{
-        //     animation: none;
-        // }
     }
 }
 
@@ -36,31 +16,32 @@ input:checked~.checkmark-wrapper {
     display: none
 }
 
-
-
 .checkbox:checked {
     &~.icon-hider {
         animation: fill-heart 2s ease-in-out forwards;
-
         @include desktop-only {
             animation: none;
             opacity: 0;
         }
-
     }
-    &~.fas.fa-heart.empty{
-        -webkit-text-stroke-color: transparent;
+    &~.icon--heart--empty{
+        opacity: 0;
+        // -webkit-text-stroke-color: transparent;
         transition-delay: 1.5s;
+        @include desktop-only{
+            transition:none;
+        }
     }
+
 
 }
 
-@keyframes rotate-icon {
-    0% {
-        transform: rotateZ(-180deg);
-    }
+// .checkbox:not(:checked){
+//     @include desktop-only{
+//         &>.fa-heart--empty {
+//             -webkit-text-stroke-color: black;
+//             // transition-delay: 2.5s;
+//         }
+//     }
+// }
 
-    100% {
-        transform: rotateZ(0deg);
-    }
-}

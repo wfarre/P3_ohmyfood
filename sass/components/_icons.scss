@@ -1,70 +1,118 @@
 .icon {
-    position: relative;
-    @include box-sizing(24px, 24px);
-    font-size: 24px;
-    align-self: center;
-
-
-    @include desktop-only {
-        &:hover {
-            cursor: pointer;
-
-            &>.icon-hider {
-                animation: fill-heart 3s ease-in-out forwards;
-            }
-
-            &>.fas.fa-heart.empty {
-                -webkit-text-stroke-color: transparent;
-                transition-delay: 2.5s;
-            }
-        }
+    &--checkmark {
+        color: white;
+        transform: rotateZ(-180deg);
     }
 
-
-
-    .icon-hider {
-        @include box-sizing(200%, 200%, 35%, absolute);
-        background-color: white;
-        left: -50%;
-        bottom: 0;
-        z-index: 5;
-    }
-
-
-
-    .fas.fa-heart {
+    &--heart {
         position: absolute;
-        top: 0;
-        left: 0;
+        @include absolute-positionning;
         background: linear-gradient($primary-color, $secondary-color);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         overflow: hidden;
         z-index: 0;
 
-        &.empty {
-
+        &--empty {
             background: transparent;
             -webkit-text-fill-color: transparent;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: black;
             z-index: 999;
-            transition: -webkit-text-stroke-color 500ms;
-            transition-delay: 0;
 
+            transition: opacity 500ms;
+            transition-delay: 0;
+            // @include desktop-only{
+            //     transition:none;
+            // }
         }
 
-        // &>.icon--heart__background {
-        //     // background-color: red;
-        //     background-clip: transparent;
-        //     background: linear-gradient($primary-color, $secondary-color);
-        //     @include box-sizing(100%, 100%, 0, absolute);
-        //     z-index: 0;
-        //     top: 0;
-        //     left: 0;
+    }
+}
 
-        // }
+.icon-wrapper {
+    @include flexbox(row, center, center);
+    font-size: 24px;
+    overflow: hidden;
+
+    &--heart {
+        @include box-sizing(24px, 24px);
+
+        @include desktop-only {
+            &:hover {
+                cursor: pointer;
+
+                &>.icon-hider {
+                    animation: fill-heart 3s ease-in-out forwards;
+                }
+
+                &>.icon--heart--empty {
+                    opacity: 0;
+                    // -webkit-text-stroke-color: transparent;
+                    transition-delay: 2.5s;
+                }
+            }
+
+            // &:not(:checked){
+            //     &>.fa-heart--empty {
+            //         // -webkit-text-stroke-color: transparent;
+            //         // transition-delay: 2.5s;
+            //         transition: none;
+            //     }
+            // }
+        }
+
+        .icon-hider {
+            @include box-sizing(200%, 200%, 35%, absolute);
+            background-color: white;
+            left: -50%;
+            bottom: 0;
+            z-index: 5;
+        }
 
     }
 
+    &--checkmark {
+        @include box-sizing(100%, 0, 0, absolute);
+        background-color: $tertiary-color;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: ease-out width 1s;
+    }
+
+
 }
+
+
+
+
+// .icon {
+//     position: relative;
+//     @include box-sizing(24px, 24px);
+//     font-size: 24px;
+//     align-self: center;
+
+//     @include desktop-only {
+//         &:hover {
+//             cursor: pointer;
+
+//             &>.icon-hider {
+//                 animation: fill-heart 3s ease-in-out forwards;
+//             }
+
+//             &>.fa-heart--empty {
+//                 opacity: 0;
+//                 // -webkit-text-stroke-color: transparent;
+//                 transition-delay: 2.5s;
+//             }
+//         }
+// &:not(:checked){
+//     &>.fa-heart--empty {
+//         // -webkit-text-stroke-color: transparent;
+//         // transition-delay: 2.5s;
+//         transition: none;
+//     }
+// }
+// }
