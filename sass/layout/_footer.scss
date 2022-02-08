@@ -1,14 +1,14 @@
 
 .footer {
     padding: 5%;
-    background-color: rgb(53, 53, 53);
+    background-color: $bg-color--footer;
     @include desktop-only{
         padding: 2% 20%;
         height: 120px;
     }
 
     .company-title {
-        @include font-title(20px, 400, white, $title-font);
+        @include font-title(20px, 400, $font-color--footer, $title-font);
         margin-bottom: 20px;
         @include desktop-only{
             text-align: center;
@@ -21,9 +21,7 @@
     &__menu {
         padding: 0;
         @include desktop-only{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            @include flexbox(row, space-between);
             margin-bottom: 0;
         }
 
@@ -33,23 +31,20 @@
             &__link {
                 @include flexbox(row, flex-start, center);
                 text-decoration: none;
-                color: white;
+                color: $font-color--footer;
 
-                .icon {
+                .icon-wrapper {
                     @include box-sizing(14px, 14px);
                     font-size: 14px;
                     margin-right: 12px;
                     align-self: baseline;
                 }
 
-                p {
+                .link__text{
                     margin-bottom: 10px;
                     margin-top: 0;
                 }
             }
-
-
         }
     }
-
 }

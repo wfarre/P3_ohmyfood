@@ -22,11 +22,7 @@
 
             transition: opacity 500ms;
             transition-delay: 0;
-            // @include desktop-only{
-            //     transition:none;
-            // }
         }
-
     }
 }
 
@@ -48,23 +44,14 @@
 
                 &>.icon--heart--empty {
                     opacity: 0;
-                    // -webkit-text-stroke-color: transparent;
                     transition-delay: 2.5s;
                 }
             }
-
-            // &:not(:checked){
-            //     &>.fa-heart--empty {
-            //         // -webkit-text-stroke-color: transparent;
-            //         // transition-delay: 2.5s;
-            //         transition: none;
-            //     }
-            // }
         }
 
         .icon-hider {
             @include box-sizing(200%, 200%, 35%, absolute);
-            background-color: white;
+            background-color: $bg-color--card;
             left: -50%;
             bottom: 0;
             z-index: 5;
@@ -81,38 +68,4 @@
         overflow: hidden;
         transition: ease-out width 1s;
     }
-
-
 }
-
-
-
-
-// .icon {
-//     position: relative;
-//     @include box-sizing(24px, 24px);
-//     font-size: 24px;
-//     align-self: center;
-
-//     @include desktop-only {
-//         &:hover {
-//             cursor: pointer;
-
-//             &>.icon-hider {
-//                 animation: fill-heart 3s ease-in-out forwards;
-//             }
-
-//             &>.fa-heart--empty {
-//                 opacity: 0;
-//                 // -webkit-text-stroke-color: transparent;
-//                 transition-delay: 2.5s;
-//             }
-//         }
-// &:not(:checked){
-//     &>.fa-heart--empty {
-//         // -webkit-text-stroke-color: transparent;
-//         // transition-delay: 2.5s;
-//         transition: none;
-//     }
-// }
-// }

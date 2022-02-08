@@ -241,12 +241,12 @@
   z-index: 1;
 }
 
-input:checked ~ .icon-wrapper--checkmark {
+.radio-check:checked ~ .icon-wrapper--checkmark {
   width: 60px;
   visibility: visible;
   z-index: 100;
 }
-input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
+.radio-check:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   animation: rotate-icon 400ms forwards;
 }
 
@@ -447,7 +447,9 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   border-radius: 0;
   background-color: transparent;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: stretch;
   background-color: white;
   z-index: 999;
   animation: fadeout 2s forwards;
@@ -456,28 +458,13 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   position: fixed;
   height: 100px;
   width: 100px;
-  top: 40%;
-  transform: translateY(-50%);
+  border-radius: 100%;
+  background-color: transparent;
   border: 16px solid #99E2D0;
   border-right: 16px solid #9356DC;
-  border-radius: 100%;
+  top: 40%;
+  transform: translateY(-50%);
   animation: load 1.5s infinite ease-out;
-}
-
-.separator {
-  display: none;
-  position: absolute;
-  height: 200px;
-  width: 1px;
-  background-color: #ebebeb;
-  top: 50%;
-  transform: translateY(-50%) translateX(-1.5rem);
-  z-index: 10;
-}
-@media all and (min-width: 993px) {
-  .separator {
-    display: block;
-  }
 }
 
 .section-title {
@@ -487,17 +474,15 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
 .section {
   padding: 0 5%;
 }
-
-.section-functionning {
-  padding: 0 5%;
+.section--functionning {
   margin: 50px 0;
 }
 @media all and (min-width: 993px) {
-  .section-functionning {
+  .section--functionning {
     width: 100%;
   }
 }
-.section-functionning .button--wrapper {
+.section--functionning .button--wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -506,14 +491,16 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   row-gap: 18px;
 }
 @media all and (min-width: 993px) {
-  .section-functionning .button--wrapper {
-    gap: 1.5rem;
+  .section--functionning .button--wrapper {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
     width: 100%;
   }
 }
-.section-functionning .index {
+.section--functionning .index {
   position: absolute;
   height: 24px;
   width: 24px;
@@ -528,12 +515,6 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   color: white;
   font-size: 12px;
 }
-
-.section--grey-bg {
-  padding-bottom: 60px;
-  background-color: #f6f6f6;
-}
-
 .section--restaurant {
   padding-top: 50px;
 }
@@ -544,6 +525,82 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
     width: 100%;
     padding-top: 0;
   }
+}
+.section--grey-bg {
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+@media all and (min-width: 993px) {
+  .section--grey-bg {
+    background-color: transparent;
+  }
+}
+
+.section--menu {
+  padding: 0;
+  margin-bottom: 50px;
+}
+@media all and (min-width: 993px) {
+  .section--menu {
+    width: 30%;
+  }
+}
+.section--menu .image-wrapper {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 0;
+  background-color: transparent;
+}
+.section--menu .block__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  row-gap: 16px;
+}
+.section--menu .card:nth-child(1) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+}
+.section--menu .card:nth-child(2) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
+}
+.section--menu .card:nth-child(3) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
+}
+.section--menu .card:nth-child(4) {
+  animation: tile-apparition 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 800ms;
+}
+.section--menu__header {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.section--menu__header h3 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: black;
+  text-transform: uppercase;
+  margin: 0;
+}
+.section--menu__header::before {
+  content: " ";
+  position: absolute;
+  height: 3px;
+  width: 45px;
+  border-radius: 0;
+  background-color: transparent;
+  background-color: #99E2D0;
+  bottom: 0;
 }
 
 .nav {
@@ -610,10 +667,13 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
 }
 @media all and (min-width: 993px) {
   .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    background-color: transparent;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
     column-gap: 1.25%;
   }
   .container--wrapper {
@@ -671,6 +731,7 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: stretch;
     margin-bottom: 0;
   }
 }
@@ -685,7 +746,7 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   text-decoration: none;
   color: white;
 }
-.footer__menu__item__link .icon {
+.footer__menu__item__link .icon-wrapper {
   position: relative;
   height: 14px;
   width: 14px;
@@ -695,7 +756,7 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   margin-right: 12px;
   align-self: baseline;
 }
-.footer__menu__item__link p {
+.footer__menu__item__link .link__text {
   margin-bottom: 10px;
   margin-top: 0;
 }
@@ -766,30 +827,33 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   background-size: cover;
 }
 
+.separator {
+  position: absolute;
+  height: 200px;
+  width: 1px;
+  border-radius: 0;
+  background-color: transparent;
+  display: block;
+  background-color: #ebebeb;
+  top: 50%;
+  transform: translateY(-50%) translateX(-1.5rem);
+  z-index: 10;
+}
 .main--menu {
   border-radius: 30px 30px 0 0;
   background-color: #f6f6f6;
   padding-bottom: 65px;
 }
 .main--menu .menu {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 .main--menu .menu__content {
-  padding: 0 4%;
-  border-radius: 30px 30px 0 0;
-  background-color: #f6f6f6;
   position: relative;
+  padding: 0 4%;
+  background-color: #f6f6f6;
+  border-radius: 30px 30px 0 0;
   top: -50px;
-}
-.main--menu .menu-section {
-  padding: 0;
-  margin-bottom: 50px;
-}
-@media all and (min-width: 993px) {
-  .main--menu .menu-section {
-    width: 30%;
-  }
 }
 .main--menu .main__header {
   display: inline-flex;
@@ -801,66 +865,8 @@ input:checked ~ .icon-wrapper--checkmark .icon--checkmark {
   color: black;
   padding-top: 18px;
 }
-.main--menu .image-wrapper {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  border-radius: 0;
-  background-color: transparent;
-}
-.main--menu .block__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  row-gap: 16px;
-}
-.main--menu .card:nth-child(1) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 200ms;
-}
-.main--menu .card:nth-child(2) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 400ms;
-}
-.main--menu .card:nth-child(3) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 600ms;
-}
-.main--menu .card:nth-child(4) {
-  animation: tile-apparition 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 800ms;
-}
 .main--menu .icon-hider {
   background-color: #f6f6f6;
-}
-
-.menu-section__header {
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-.menu-section__header h3 {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: black;
-  text-transform: uppercase;
-  margin: 0;
-}
-.menu-section__header::before {
-  content: " ";
-  position: absolute;
-  height: 3px;
-  width: 45px;
-  border-radius: 0;
-  background-color: transparent;
-  background-color: #99E2D0;
-  bottom: 0;
 }
 
 body {

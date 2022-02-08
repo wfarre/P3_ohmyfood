@@ -67,14 +67,14 @@
                 <div class="container menu-wrapper">
 
 
-                    <section class="section menu-section menu-section--apetizers">
+                    <section id="apetizer" class="section section--menu section--menu--apetizers">
 
-                        <header class="menu-section__header">
+                        <header class="section--menu__header">
                             <h3>Entrées</h3>
                         </header>
                         <div class="block__content">
                             <label class="card card--menu" for="apetizer1">
-                                <input type="radio" name="apetizer" id="apetizer1">
+                                <input class="link__text" class="radio-check" name="apetizer" id="apetizer1">
 
                                 <div class="card__content">
                                     <div class="card__content__text">
@@ -91,7 +91,7 @@
                             </label>
 
                             <label class="card card--menu" for="apetizer2">
-                                <input type="radio" name="apetizer" id="apetizer2">
+                                <input type="radio" class="radio-check" name="apetizer" id="apetizer2">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Foie gras de canard mi-cuit</h4>
@@ -107,7 +107,7 @@
                             </label>
 
                             <label class="card card--menu" for="apetizer3">
-                                <input type="radio" name="apetizer" id="apetizer3">
+                                <input type="radio" class="radio-check" name="apetizer" id="apetizer3">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Oeuf au plat</h4>
@@ -122,16 +122,17 @@
                                     <i class="fas fa-check-circle icon icon icon--checkmark"></i>
                                 </div>
                             </label>
+                        </div>   <!-- .block__content  -->
 
-                    </section>
+                    </section> <!-- #apetizer -->
 
-                    <section class="section menu-section menu-section--main">
-                        <header class="menu-section__header">
+                    <section id="dish" class="section section--menu section--menu--main">
+                        <header class="section--menu__header">
                             <h3>Plats</h3>
                         </header>
                         <div class="block__content">
                             <label class="card card--menu" for="main1">
-                                <input type="radio" name="main" id="main1">
+                                <input type="radio" class="radio-check" name="main" id="main1">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Filet de boeuf aux herbes</h4>
@@ -147,7 +148,7 @@
                             </label>
 
                             <label class="card card--menu" for="main2">
-                                <input type="radio" name="main" id="main2">
+                                <input type="radio" class="radio-check" name="main" id="main2">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Parmentier de queue de boeuf</h4>
@@ -164,7 +165,7 @@
                             </label>
 
                             <label class="card card--menu" for="main3">
-                                <input type="radio" name="main" id="main3">
+                                <input type="radio" class="radio-check" name="main" id="main3">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Filet de turbot</h4>
@@ -178,17 +179,17 @@
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
                             </label>
-                        </div>
+                        </div>   <!-- .block__content  -->
                         <div class="separator"></div>
-                    </section>
+                    </section><!-- #dish  -->
 
-                    <section class="section menu-section menu-section--dessert">
-                        <header class="menu-section__header">
+                    <section id="dessert" class="section section--menu section--menu--dessert">
+                        <header class="section--menu__header">
                             <h3>Desserts</h3>
                         </header>
                         <div class="block__content">
                             <label class="card card--menu" for="dessert1">
-                                <input type="radio" name="dessert" id="dessert1">
+                                <input type="radio" class="radio-check" name="dessert" id="dessert1">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Paris-Brest</h4>
@@ -204,7 +205,7 @@
                             </label>
 
                             <label class="card card--menu" for="dessert2">
-                                <input type="radio" name="dessert" id="dessert2">
+                                <input type="radio" class="radio-check" name="dessert" id="dessert2">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Macaron au chocolat d'exception </h4>
@@ -220,7 +221,7 @@
                             </label>
 
                             <label class="card card--menu" for="dessert3">
-                                <input type="radio" name="dessert" id="dessert3">
+                                <input type="radio" class="radio-check" name="dessert" id="dessert3">
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title">Mousse au chocolat </h4>
@@ -235,12 +236,10 @@
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
                             </label>
-
-                        </div>
+                        </div>   <!-- .block__content  -->
                         <div class="separator"></div>
-
-                    </section>
-                </div>
+                    </section><!-- #dessert  -->
+                </div><!-- .container--wrapper -->
 
                 <div class="btn-wrapper">
                     <button class="btn btn--gradient btn--explore">Commander</button>
@@ -250,38 +249,37 @@
     </main>
     <footer>
         <div class="footer">
+
             <div class="block__header">
                 <h4 class="company-title">ohmyfood</h1>
             </div>
 
-            <!-- <img src="./images/logo/ohmyfood@2x.svg" alt="logo oh my food!"> -->
-
             <ul class="footer__menu">
                 <li class="footer__menu__item">
                     <a class="footer__menu__item__link" href="">
-                        <div class="icon">
+                        <div class="icon-wrapper">
                             <i class="fas fa-utensils"></i>
                         </div>
-                        <p>Proposer un restaurant</p>
+                        <p class="link__text">Proposer un restaurant</p>
                     </a>
                 </li>
                 <li class="footer__menu__item">
                     <a class="footer__menu__item__link" href="">
-                        <div class="icon">
+                        <div class="icon-wrapper">
                             <i class="fas fa-hands-helping"></i>
                         </div>
-                        <p>Devenir partenaire</p>
+                        <p class="link__text">Devenir partenaire</p>
                     </a>
                 </li>
                 <li class="footer__menu__item">
                     <a class="footer__menu__item__link" href="">
-                        <p>Mentions légales</p>
+                        <p class="link__text">Mentions légales</p>
                     </a>
 
                 </li>
                 <li class="footer__menu__item">
                     <a class="footer__menu__item__link" href="mailto:william.farre@gmail.com">
-                        <p>Contact</p>
+                        <p class="link__text">Contact</p>
                     </a>
 
                 </li>

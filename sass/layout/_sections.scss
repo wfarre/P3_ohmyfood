@@ -4,57 +4,94 @@
 
 .section{
     padding: 0 5%;
+    &--functionning {
+        margin: 50px 0;
+        @include desktop-only{
+            width: 100%;
+        }
+        .button--wrapper {
+            @include flexbox(column, flex-start, center);
+            margin-left: 12px;
+            row-gap: 18px;
+            @include desktop-only{
+                @include flexbox(row, space-between, center);
+                gap:1.5rem;
+                width: 100%;
+            }
+        }
+    
+        .index {
+            @include box-sizing(24px, 24px, 100%, absolute);
+            @include flexbox(row, center, center);
+            left: -12px;
+            background-color: $primary-color;
+            color: $font-color--footer;
+            font-size: 12px;
+        }
+    }
+    &--restaurant{
+        padding-top: 50px;
+        @include desktop-only{
+            border-radius: 10px;
+            background-color: $bg-color--card;
+            width: 100%;
+            padding-top: 0 ;
+        }
+    }
+    &--grey-bg{
+            padding-bottom: 60px;
+            background-color: $bg-color;
+            @include desktop-only{
+                background-color: transparent;
+            }
+        } 
 }
 
+///////////////////////////////////////////////////////////
+// menu page section menu 
+.section--menu {
+    padding: 0;
+    margin-bottom: 50px;
 
-.section-functionning {
-    padding: 0 5%;
-    margin: 50px 0;
-    @include desktop-only{
-      
-        width: 100%;
+    @include desktop-only {
+        width: 30%;
     }
 
-    .button--wrapper {
-        @include flexbox(column, flex-start, center);
-        margin-left: 12px;
-        row-gap: 18px;
-        @include desktop-only{
-            gap:1.5rem;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
+    .image-wrapper {
+        @include box-sizing(250px, 100%);
+    }
+
+    .block__content {
+        @include flexbox(column, space-between);
+        row-gap: 16px;
+    }
+
+    @for $i from 1 through 4 {
+        .card:nth-child(#{$i}) {
+            animation: tile-apparition 3s;
+            animation-fill-mode: forwards;
+            animation-delay: $i*200ms
         }
     }
 
+    
+    &__header {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
 
-   
+        // padding: 0 5%;
+        h3 {
+            @include font-title(16px);
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-    .index {
-        @include box-sizing(24px, 24px, 100%, absolute);
-        @include flexbox(row, center, center);
-        left: -12px;
-        background-color: $primary-color;
-        color: white;
-        font-size: 12px;
-
-    }
-}
-
-
-
-.section--grey-bg{
-    padding-bottom: 60px;
-    background-color: $bg-color;
-}
-
-
-.section--restaurant{
-    padding-top: 50px;
-    @include desktop-only{
-        border-radius: 10px;
-        background-color: white;
-        width: 100%;
-        padding-top: 0 ;
+        &::before {
+            content: " ";
+            @include box-sizing(3px, 45px, 0, absolute);
+            background-color: $tertiary-color;
+            bottom: 0;
+        }
     }
 }

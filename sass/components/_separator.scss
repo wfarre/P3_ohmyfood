@@ -1,15 +1,12 @@
 .separator{
-    display: none;
-    position: absolute;
-    height: 200px;
-    width: 1px;
+    @include box-sizing(200px, 1px, 0, absolute);
+    // display: none;
+    display: block;
     background-color: rgb(235, 235, 235);
     top: 50%;
-    // left: -9px;
-    // right: 0;
     transform: translateY(-50%) translateX(-1.5rem);
     z-index: 10;
     @include desktop-only{
-        display: block;
+        // display: inline-block;
     }
 }

@@ -1,20 +1,19 @@
 .loader-wrapper {
     @include box-sizing(100%, 100%, 0, absolute);
-    display: flex;
-    justify-content: center;
-    background-color: white;
+    @include flexbox(row, center);
+    background-color: $bg-color--card;
     z-index: 999;
+
     animation: fadeout 2s forwards;
 
     .loader {
-        position: fixed;
-        height: 100px;
-        width: 100px;
-        top: 40%;
-        transform: translateY(-50%);
+        @include box-sizing(100px, 100px, 100%, fixed);
         border: 16px solid $tertiary-color;
         border-right: 16px solid $primary-color;
-        border-radius: 100%;
+        top: 40%;
+        transform: translateY(-50%);
+        
+
         animation: load 1.5s infinite ease-out;
     }
 }

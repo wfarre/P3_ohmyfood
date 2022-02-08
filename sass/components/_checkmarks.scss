@@ -1,7 +1,5 @@
 // checkmark for menu selection
-
-
-input:checked~.icon-wrapper--checkmark {
+.radio-check:checked~.icon-wrapper--checkmark {
     width: 60px;
     visibility: visible;
     z-index: 100;
@@ -32,16 +30,5 @@ input:checked~.icon-wrapper--checkmark {
             transition:none;
         }
     }
-
-
 }
-
-// .checkbox:not(:checked){
-//     @include desktop-only{
-//         &>.fa-heart--empty {
-//             -webkit-text-stroke-color: black;
-//             // transition-delay: 2.5s;
-//         }
-//     }
-// }
 

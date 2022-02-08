@@ -3,7 +3,7 @@
 
     .logo{
         @include flexbox(row, center, center);
-        @include box-sizing(60px, 100%, relative, 0, white);
+        @include box-sizing(60px, 100%, relative, 0, $bg-color--card);
         .company-title {
             @include font-title(30px, 400, black, $title-font );
         }
@@ -24,10 +24,10 @@
         @include flexbox(row, center, center);
         @include absolute-positionning(0, 24px);
         text-decoration: none;
-        color: black;
-        
+        color: $font-color--main;
         font-size: 18px;
         z-index: 3;
+
         &:hover{
             cursor: pointer;
         }

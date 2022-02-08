@@ -1,14 +1,14 @@
 .btn{
+
     &--explore{
         position: relative;
         @include button-layout(linear-gradient($secondary-color,$primary-color), white, 16px, 40px, 15px 25px );
         &:before{
             content: " ";
             @include box-sizing(100%, 100%, 40px, absolute);
-
             @include absolute-positionning;
-            background-color: white;
-            box-shadow:  0px 5px 16px black;
+            background-color: $bg-color--card;
+            box-shadow:  0px 5px 16px $black;
             opacity: 0;
             transition: opacity 0.5s
         }
@@ -20,27 +20,25 @@
         }
 
     }
+
     &--functionning{
-        @include button-layout($bg-color, black, 16px, 20px, 0 8% );
+        @include button-layout($bg-color, $black, 16px, 20px, 0 8% );
         @include flexbox(row, flex-start, center);
         @include box-sizing(80px, 85% , 20px);
         @include desktop-only{
             padding: 0 3%;
         }
-
         &__icon-box{
             @include flexbox(row, flex-start, center);
             @include box-sizing(100%, 50px);
             .icon{
                 font-size: 24px;
-                width: 28px;
-                
+                width: 28px; 
             }
         }
         &__text{
             font-weight: bold;
-        }
-        
+        } 
     }
 }
 
@@ -55,7 +53,6 @@
     .icon{
         color: $primary-color;
     }
-
     &::before {
         content: " ";
         @include box-sizing(100%,100%, 20px, absolute);
