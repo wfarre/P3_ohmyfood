@@ -2,15 +2,18 @@
 .footer {
     padding: 5%;
     background-color: $bg-color--footer;
+    @include tablet-only{
+        height: 120px;
+    }
     @include desktop-only{
         padding: 2% 20%;
         height: 120px;
     }
 
     .company-title {
-        @include font-title(20px, 400, $font-color--footer, $title-font);
+        @include font-text(20px, 400, $font-color--footer, $title-font);
         margin-bottom: 20px;
-        @include desktop-only{
+        @include tablet-only{
             text-align: center;
             font-size: 30px;
             margin:0;
@@ -20,7 +23,7 @@
 
     &__menu {
         padding: 0;
-        @include desktop-only{
+        @include tablet-only{
             @include flexbox(row, space-between);
             margin-bottom: 0;
         }
@@ -32,6 +35,9 @@
                 @include flexbox(row, flex-start, center);
                 text-decoration: none;
                 color: $font-color--footer;
+                &:hover{
+                    color: $color-secondary;
+                }
 
                 .icon-wrapper {
                     @include box-sizing(14px, 14px);

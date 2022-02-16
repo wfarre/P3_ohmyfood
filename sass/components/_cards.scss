@@ -23,43 +23,38 @@
     &__content {
         @include flexbox(row, space-between, center);
         padding: 0 5%;
-
         &__text {
             @include flexbox(column, space-between);
-
             &__title {
                 margin: 0;
-
             }
-
             &__info {
                 margin: 0;
-
             }
         }
     }
-
     &--home {
         text-decoration: none;
         color: black;
-
-        @include desktop-only {
-            width: 30%;
+        @include tablet-only{
+            width: 48%;
         }
 
+        @include desktop-only {
+            width: 32%;
+        }
         &.new::before {
             content: "Nouveau";
             @include flexbox(row, center, center);
             @include box-sizing(25px, 80px, 0, absolute);
-            @include font-title(12px, 400, rgb(58, 130, 102));
-            background-color: $tertiary-color;
+            @include font-text(12px, 400, rgb(58, 130, 102));
+            background-color: $color-tertiary;
             box-shadow: rgb(36, 36, 36) 0px 6px 6px;
 
             z-index: 1;
             @include absolute-positionning(15px, auto);
             right: 3%;
         }
-
         .card__content {
             @include flexbox(row, space-between, center);
             overflow: hidden;
@@ -68,7 +63,7 @@
 
             &__text {
                 &__title {
-                    @include font-title(18px, bold);
+                    @include font-text(18px, bold);
                     margin-bottom: 5px;
                 }
 
@@ -106,25 +101,24 @@
 
         .card__content {
             @include box-sizing(100%, 90%);
-            transition: width 1s;
             flex-wrap: nowrap;
             margin: 14px 0;
 
+            transition: width 1s;
             &__text {
                 @include box-sizing(100%, 90%);         
                 &__title {
-                    @include font-title(16px);
+                    @include font-text(16px);
                     @extend %hidden-text;
                 }
                 &__info {
+                    @include font-text(14px, 300);
                     @extend %hidden-text;
-                    font-size: 14px;
-                    font-weight: 300;
                 }
             }
 
             .price {
-                @include font-title(14px);
+                @include font-text(14px);
                 align-self: flex-end;
             }
         }

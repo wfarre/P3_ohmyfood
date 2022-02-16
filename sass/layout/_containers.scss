@@ -2,11 +2,20 @@
 .container{
     @include flexbox(column, space-between);
     row-gap: 18px;
+    @include tablet-only{
+        @include box-sizing(100%, 100%);
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 1%;
+        row-gap: 25px;
+    }
+    
     @include desktop-only{
         @include box-sizing(100%, 100%);
         flex-direction: row;
         flex-wrap: wrap;
-        column-gap: 1.25%;
+        column-gap: 1%;
+        row-gap: 25px;
         &--wrapper{
             justify-content: space-between;
             align-items: center;

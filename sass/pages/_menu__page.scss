@@ -19,10 +19,11 @@
     }
 
     .main__header {
-        display: inline-flex;
+        display: flex;
         justify-content: space-between;
+        align-content: center;
         width: 100%;
-        @include font-title(16px, bold, black, $title-font);
+        // @include font-text(16px, bold, black, $title-font);
         padding-top: 18px;
     }
 

@@ -2,7 +2,7 @@
 
     &--explore{
         position: relative;
-        @include button-layout(linear-gradient($secondary-color,$primary-color), white, 16px, 40px, 15px 25px );
+        @include button-layout(linear-gradient($color-secondary,$color-primary), white, 16px, 40px, 15px 25px );
         &:before{
             content: " ";
             @include box-sizing(100%, 100%, 40px, absolute);
@@ -25,6 +25,9 @@
         @include button-layout($bg-color, $black, 16px, 20px, 0 8% );
         @include flexbox(row, flex-start, center);
         @include box-sizing(80px, 85% , 20px);
+        @include tablet-only{
+            padding: 0 3%;
+        }
         @include desktop-only{
             padding: 0 3%;
         }
@@ -51,13 +54,13 @@
     position: relative;
 
     .icon{
-        color: $primary-color;
+        color: $color-primary;
     }
     &::before {
         content: " ";
         @include box-sizing(100%,100%, 20px, absolute);
         @include absolute-positionning;
-        background-color: $primary-color;
+        background-color: $color-primary;
         opacity: 0.1;
         z-index: 1;
     }

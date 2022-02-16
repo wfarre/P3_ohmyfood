@@ -1,18 +1,32 @@
-.section-title {
-    margin-bottom: 25px;
-}
+// .section-title {
+//     margin-bottom: 25px;
+// }
 
 .section{
     padding: 0 5%;
+    // @include tablet-only{
+    //     padding: 0 3%
+    // }
+    // @include desktop-only{
+    //     padding: 0 5%;
+    // }
     &--functionning {
         margin: 50px 0;
-        @include desktop-only{
-            width: 100%;
+        @include tablet-only{
+            width: calc(90% - 12px);
         }
-        .button--wrapper {
+        @include desktop-only{
+            width: calc(90% - 12px);
+        }
+        .button--container {
             @include flexbox(column, flex-start, center);
             margin-left: 12px;
             row-gap: 18px;
+            @include tablet-only{
+                @include flexbox(row, space-between, center);
+                gap:1.5rem;
+                width: 100%;
+            }
             @include desktop-only{
                 @include flexbox(row, space-between, center);
                 gap:1.5rem;
@@ -24,7 +38,7 @@
             @include box-sizing(24px, 24px, 100%, absolute);
             @include flexbox(row, center, center);
             left: -12px;
-            background-color: $primary-color;
+            background-color: $color-primary;
             color: $font-color--footer;
             font-size: 12px;
         }
@@ -34,7 +48,7 @@
         @include desktop-only{
             border-radius: 10px;
             background-color: $bg-color--card;
-            width: 100%;
+            width: 90%;
             padding-top: 0 ;
         }
     }
@@ -52,6 +66,10 @@
 .section--menu {
     padding: 0;
     margin-bottom: 50px;
+
+    @include tablet-only{
+        width: 48%;
+    }
 
     @include desktop-only {
         width: 30%;
@@ -82,15 +100,15 @@
 
         // padding: 0 5%;
         h3 {
-            @include font-title(16px);
-            text-transform: uppercase;
-            margin: 0;
+            // @include font-text(16px);
+            // text-transform: uppercase;
+           
         }
 
         &::before {
             content: " ";
             @include box-sizing(3px, 45px, 0, absolute);
-            background-color: $tertiary-color;
+            background-color: $color-tertiary;
             bottom: 0;
         }
     }

@@ -17,7 +17,7 @@
     background-color: $background;
 }
 
-@mixin font-title($font-size, $font-weight:400, $color:black, $font-family:$main-font){
+@mixin font-text($font-size, $font-weight:400, $color:$black, $font-family:$main-font){
     font-size:$font-size;
     font-family: $font-family;
     font-weight: $font-weight;

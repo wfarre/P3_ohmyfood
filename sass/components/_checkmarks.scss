@@ -14,21 +14,34 @@
     display: none
 }
 
-.checkbox:checked {
-    &~.icon-hider {
-        animation: fill-heart 2s ease-in-out forwards;
-        @include desktop-only {
-            animation: none;
+.checkbox{
+    &:checked {
+        &~.icon-hider {
+            animation: fill-heart 2s ease-in-out forwards;
+            @include desktop-only {
+                animation: none;
+                opacity: 0;
+            }
+        }
+        &~.icon--heart--empty{
             opacity: 0;
+            // -webkit-text-stroke-color: transparent;
+            transition-delay: 1.5s;
+            @include desktop-only{
+                transition:none;
+                
+            }
         }
     }
-    &~.icon--heart--empty{
-        opacity: 0;
-        // -webkit-text-stroke-color: transparent;
-        transition-delay: 1.5s;
-        @include desktop-only{
-            transition:none;
-        }
-    }
+    // &:disabled{
+    //     &~.icon--heart--empty{
+    //         @include desktop-only{
+    //             opacity: 1;
+    //         }
+    //         // transition-delay: ;
+    //     }
+    // }
+
 }
+
 

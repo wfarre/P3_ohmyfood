@@ -5,23 +5,24 @@
     }
 
     &--heart {
+        padding: 1px;
         position: absolute;
         @include absolute-positionning;
-        background: linear-gradient($primary-color, $secondary-color);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        overflow: hidden;
-        z-index: 0;
+        &--filled{
+            background: linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
+            z-index: 50;
+        }
+       
 
         &--empty {
             background: transparent;
             -webkit-text-fill-color: transparent;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: black;
-            z-index: 999;
-
-            transition: opacity 500ms;
-            transition-delay: 0;
+            z-index: 100;
         }
     }
 }
@@ -30,23 +31,21 @@
     @include flexbox(row, center, center);
     font-size: 24px;
     overflow: hidden;
+    align-self: center;
 
     &--heart {
-        @include box-sizing(24px, 24px);
-
+        @include box-sizing(30px, 30px);
         @include desktop-only {
             &:hover {
                 cursor: pointer;
-
                 &>.icon-hider {
                     animation: fill-heart 3s ease-in-out forwards;
                 }
-
                 &>.icon--heart--empty {
-                    opacity: 0;
-                    transition-delay: 2.5s;
+                    animation: fadeout 500ms 2.5s forwards;
                 }
             }
+          
         }
 
         .icon-hider {
@@ -54,14 +53,14 @@
             background-color: $bg-color--card;
             left: -50%;
             bottom: 0;
-            z-index: 5;
+            z-index: 60;
         }
 
     }
 
     &--checkmark {
         @include box-sizing(100%, 0, 0, absolute);
-        background-color: $tertiary-color;
+        background-color: $color-tertiary;
         right: 0;
         top: 0;
         visibility: hidden;
@@ -69,3 +68,4 @@
         transition: ease-out width 1s;
     }
 }
+
