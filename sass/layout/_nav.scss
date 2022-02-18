@@ -4,10 +4,6 @@
     .logo{
         @include flexbox(row, center, center);
         @include box-sizing(60px, 100%, relative, 0, $bg-color--card);
-        // .company-title {
-        //     @include font-text(30px, 400, black, $title-font );
-        // }
-      
     }
 
     .location {

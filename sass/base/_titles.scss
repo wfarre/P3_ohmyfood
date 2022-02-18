@@ -1,40 +1,5 @@
-.card{
-    &--home{
-
-    }
-    &--menu{
-        .card__content{
-            &__text{
-                &__title{
-                    @include font-text(16px);
-                }
-                &__info{
-                    @include font-text(14px, 300);
-                }
-            }
-        }
-    }
-}
-
-
-.txt--light{
-
-}
-
-.txt--main{
-
-}
-
 .cursive-title{
     @include font-text(30px, 400, $black, $title-font );
-}
-
-.title--section{
-
-}
-
-.title--card{
-
 }
 
 .section-title{
@@ -48,3 +13,16 @@
         margin: 0;
     }
 }
+
+.txt{
+    &--bold{
+        @include font-text(16px, 500);
+    }
+    &--medium{
+        @include font-text(16px, 400);
+    }
+    &--light{
+        @include font-text(14px, 300);
+    }
+}
+

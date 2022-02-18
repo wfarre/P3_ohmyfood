@@ -1,13 +1,13 @@
-@mixin button-layout($bg-color,$font-color,$font-size,$border-radius, $padding){
-    padding: $padding;
-    background: $bg-color;
-    color: $font-color;
-    font-size: $font-size;
-    border: none;
-    border-radius: $border-radius;
-    @extend %box-shadow-style;
+// @mixin button-layout($bg-color,$font-color,$font-size,$border-radius, $padding){
+//     padding: $padding;
+//     background: $bg-color;
+//     color: $font-color;
+//     font-size: $font-size;
+//     border: none;
+//     border-radius: $border-radius;
+//     @extend %box-shadow-style;
    
-}
+// }
 
 @mixin box-sizing($height, $width, $border-radius:0, $position:relative, $background:transparent) {
     position: $position;
@@ -17,7 +17,7 @@
     background-color: $background;
 }
 
-@mixin font-text($font-size, $font-weight:400, $color:$black, $font-family:$main-font){
+@mixin font-text($font-size, $font-weight:400, $color:$font-color--main, $font-family:$main-font){
     font-size:$font-size;
     font-family: $font-family;
     font-weight: $font-weight;

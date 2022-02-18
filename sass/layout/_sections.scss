@@ -1,22 +1,10 @@
-// .section-title {
-//     margin-bottom: 25px;
-// }
-
 .section{
-    padding: 0 5%;
-    // @include tablet-only{
-    //     padding: 0 3%
-    // }
-    // @include desktop-only{
-    //     padding: 0 5%;
-    // }
+    padding: 0 $padding-lr;
+
     &--functionning {
         margin: 50px 0;
         @include tablet-only{
-            width: calc(90% - 12px);
-        }
-        @include desktop-only{
-            width: calc(90% - 12px);
+            width: calc(100% - 2*$padding-lr - 12px);
         }
         .button--container {
             @include flexbox(column, flex-start, center);
@@ -34,21 +22,13 @@
             }
         }
     
-        .index {
-            @include box-sizing(24px, 24px, 100%, absolute);
-            @include flexbox(row, center, center);
-            left: -12px;
-            background-color: $color-primary;
-            color: $font-color--footer;
-            font-size: 12px;
-        }
     }
     &--restaurant{
         padding-top: 50px;
         @include desktop-only{
             border-radius: 10px;
             background-color: $bg-color--card;
-            width: 90%;
+            width: calc(100% - 2*$padding-lr);
             padding-top: 0 ;
         }
     }
@@ -97,13 +77,6 @@
         position: relative;
         padding-bottom: 10px;
         margin-bottom: 10px;
-
-        // padding: 0 5%;
-        h3 {
-            // @include font-text(16px);
-            // text-transform: uppercase;
-           
-        }
 
         &::before {
             content: " ";

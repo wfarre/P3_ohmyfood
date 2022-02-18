@@ -1,13 +1,19 @@
 $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
-$bg-color:rgb(246, 246, 246);
-$bg-color--location:rgb(234,234,234);
-$bg-color--footer: rgb(53, 53, 53);
-$bg-color--card: rgb(255, 255, 255);
-$box-shadow-color:rgb(198, 198, 198);
 
-$font-color--footer: rgb(255, 255, 255);
-$font-color--main: rgb(0, 0, 0);
+$color-gradient: linear-gradient($color-secondary,$color-primary);
+
+$bg-color:#f6f6f6;
+$bg-color--location:#eaeaea;
+$bg-color--footer: #353535;
+$bg-color--card: #ffffff;
+$bg-color--new: #3a8266;
+
+$box-shadow-color:#c6c6c6;
+
+$font-color--footer: #ffffff;
+$font-color--main: #000000;
 
 $black:rgb(0, 0, 0);
+
