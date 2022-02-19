@@ -9,9 +9,9 @@
     .location {
         @include flexbox(row, center, center);
         @include box-sizing(50px, 100%, 0, relative, $bg-color--location );
-        font-size: 18px;
+        @include font-text(18px, 600);
         column-gap: 18px;
-        box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
+        box-shadow: inset 0 7px 9px -7px $black;
 
     }
 
@@ -23,10 +23,14 @@
         color: $font-color--main;
         font-size: 18px;
         z-index: 3;
-
         &:hover{
             cursor: pointer;
+           &>.icon{
+               animation: translate-arrow 1s ease-out infinite;
+           }
+
         }
 
     }
 }
+

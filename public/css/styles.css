@@ -8,6 +8,17 @@
   box-shadow: 0px 5px 16px #c6c6c6;
 }
 
+@keyframes translate-arrow {
+  0% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 @keyframes fill-heart {
   100% {
     transform: translateY(-50%) rotateZ(540deg);
@@ -40,6 +51,30 @@
     transform: translateY(0);
   }
 }
+@keyframes title-appear {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes underline-appear {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 45px;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes rotate-icon {
   0% {
     transform: rotateZ(-180deg);
@@ -48,15 +83,25 @@
     transform: rotateZ(0deg);
   }
 }
+@keyframes resize-btn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .cursive-title {
   font-size: 30px;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
-  color: black;
+  color: #000000;
 }
 
 .section-title {
+  animation: title-appear 2s forwards;
   margin-bottom: 25px;
+  z-index: 0;
 }
 .section-title--big {
   font-size: 24px;
@@ -73,19 +118,19 @@
   margin: 0;
 }
 
-.txt--bold {
+.card-text--bold {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #000000;
 }
-.txt--medium {
+.card-text--medium {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #000000;
 }
-.txt--light {
+.card-text--light {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -108,12 +153,18 @@
   object-fit: cover;
 }
 
+@media all and (min-width: 620px) {
+  .main--menu .image-wrapper {
+    height: 300px;
+  }
+}
+
 .icon--checkmark {
   color: white;
   transform: rotateZ(-180deg);
 }
 .icon--heart {
-  padding: 1px;
+  padding: 2px;
   position: absolute;
   top: 0;
   left: 0;
@@ -144,8 +195,8 @@
 }
 .icon-wrapper--heart {
   position: relative;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 27px;
   border-radius: 0;
   background-color: transparent;
 }
@@ -154,7 +205,7 @@
     cursor: pointer;
   }
   .icon-wrapper--heart:hover > .icon-hider {
-    animation: fill-heart 3s ease-in-out forwards;
+    animation: fill-heart 3s ease-out forwards;
   }
   .icon-wrapper--heart:hover > .icon--heart--empty {
     animation: fadeout 500ms 2.5s forwards;
@@ -230,6 +281,7 @@
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
   border-radius: 40px;
+  transition: transform 1s;
 }
 .btn--explore:before {
   content: " ";
@@ -241,15 +293,16 @@
   top: 0;
   left: 0;
   background: #ffffff;
-  box-shadow: 0px 5px 16px black;
+  box-shadow: 10px 15px 16px #000000;
   opacity: 0;
   transition: opacity 0.5s;
 }
 .btn--explore:hover {
   cursor: pointer;
+  transform: translate(-5px, -2px);
 }
 .btn--explore:hover:before {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .btn--functionning {
   display: flex;
@@ -264,6 +317,7 @@
   background-color: #f6f6f6;
   border-radius: 20px;
   padding: 0 8%;
+  opacity: 0;
 }
 @media all and (min-width: 620px) {
   .btn--functionning {
@@ -346,6 +400,7 @@
   background-color: transparent;
   overflow: hidden;
   background-color: #ffffff;
+  opacity: 0;
 }
 .card:hover {
   cursor: pointer;
@@ -383,7 +438,7 @@
 }
 .card--home {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 @media all and (min-width: 620px) {
   .card--home {
@@ -411,7 +466,7 @@
   font-weight: 400;
   color: #3a8266;
   background-color: #99E2D0;
-  box-shadow: black 0px 6px 6px;
+  box-shadow: #000000 0px 6px 6px;
   z-index: 1;
   top: 15px;
   left: auto;
@@ -439,9 +494,9 @@
   width: 100%;
   border-radius: 10px;
   background-color: transparent;
-  opacity: 0;
   transform: translateY(50px);
   align-content: center;
+  z-index: 10;
 }
 @media all and (min-width: 993px) {
   .card--menu {
@@ -529,6 +584,29 @@
 .section--functionning {
   margin: 50px 0;
 }
+.section--functionning .section__header::after {
+  background-color: #ffffff;
+}
+.section--functionning .btn:nth-child(1) {
+  animation: fadein 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 800ms;
+}
+.section--functionning .btn:nth-child(2) {
+  animation: fadein 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1100ms;
+}
+.section--functionning .btn:nth-child(3) {
+  animation: fadein 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1400ms;
+}
+.section--functionning .btn:nth-child(4) {
+  animation: fadein 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1700ms;
+}
 @media all and (min-width: 620px) {
   .section--functionning {
     width: calc(90% - 12px);
@@ -573,6 +651,26 @@
     padding-top: 0;
   }
 }
+.section--restaurant .card:nth-child(1) {
+  animation: fadein 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 800ms;
+}
+.section--restaurant .card:nth-child(2) {
+  animation: fadein 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 1100ms;
+}
+.section--restaurant .card:nth-child(3) {
+  animation: fadein 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 1400ms;
+}
+.section--restaurant .card:nth-child(4) {
+  animation: fadein 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 1700ms;
+}
 .section--grey-bg {
   padding-bottom: 60px;
   background-color: #f6f6f6;
@@ -604,7 +702,7 @@
   border-radius: 0;
   background-color: transparent;
 }
-.section--menu .block__content {
+.section--menu .section__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -614,22 +712,22 @@
 .section--menu .card:nth-child(1) {
   animation: tile-apparition 3s;
   animation-fill-mode: forwards;
-  animation-delay: 200ms;
+  animation-delay: 1.7s;
 }
 .section--menu .card:nth-child(2) {
   animation: tile-apparition 3s;
   animation-fill-mode: forwards;
-  animation-delay: 400ms;
+  animation-delay: 1.9s;
 }
 .section--menu .card:nth-child(3) {
   animation: tile-apparition 3s;
   animation-fill-mode: forwards;
-  animation-delay: 600ms;
+  animation-delay: 2.1s;
 }
 .section--menu .card:nth-child(4) {
   animation: tile-apparition 3s;
   animation-fill-mode: forwards;
-  animation-delay: 800ms;
+  animation-delay: 2.3s;
 }
 .section--menu__header {
   position: relative;
@@ -640,11 +738,12 @@
   content: " ";
   position: absolute;
   height: 3px;
-  width: 45px;
+  width: 0;
   border-radius: 0;
   background-color: transparent;
   background-color: #99E2D0;
   bottom: 0;
+  animation: underline-appear 1.5s 2s forwards;
 }
 
 .nav {
@@ -672,8 +771,11 @@
   border-radius: 0;
   background-color: #eaeaea;
   font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #000000;
   column-gap: 18px;
-  box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 7px 9px -7px #000000;
 }
 .nav .icon-arrow-wrapper {
   position: absolute;
@@ -694,6 +796,9 @@
 }
 .nav .icon-arrow-wrapper:hover {
   cursor: pointer;
+}
+.nav .icon-arrow-wrapper:hover > .icon {
+  animation: translate-arrow 1s ease-out infinite;
 }
 
 .container {
@@ -887,6 +992,26 @@
   background-size: cover;
 }
 
+.section--menu__header, .section__header {
+  position: relative;
+}
+.section--menu__header:after, .section__header:after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background-color: #f6f6f6;
+  z-index: 5;
+}
+
+@media all and (min-width: 993px) {
+  .section__header:after {
+    background-color: #ffffff;
+  }
+}
+
 .separator {
   position: absolute;
   height: 200px;
@@ -931,6 +1056,10 @@
 .main--menu .icon-hider {
   background-color: #f6f6f6;
 }
+.main--menu .btn--explore {
+  transform: scale(0);
+  animation: resize-btn 1s 2.5s forwards;
+}
 
 body {
   position: relative;
@@ -943,6 +1072,10 @@ body {
   font-weight: 400;
   color: "Roboto", sans-serif;
   margin: 0;
+}
+
+.block__header {
+  position: relative;
 }
 
 /*# sourceMappingURL=styles.css.map */

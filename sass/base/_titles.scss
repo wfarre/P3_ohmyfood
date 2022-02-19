@@ -2,8 +2,13 @@
     @include font-text(30px, 400, $black, $title-font );
 }
 
+
+
 .section-title{
+    animation: title-appear 2s forwards;
     margin-bottom: 25px;
+    z-index: 0;
+    
     &--big{
         @include font-text(24px, 700);
     }
@@ -14,7 +19,9 @@
     }
 }
 
-.txt{
+
+
+.card-text{
     &--bold{
         @include font-text(16px, 500);
     }
@@ -25,4 +32,5 @@
         @include font-text(14px, 300);
     }
 }
+
 

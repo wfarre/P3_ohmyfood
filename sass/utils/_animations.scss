@@ -1,10 +1,25 @@
+// navbar.scss animate the arrow 
+@keyframes translate-arrow {
+    0%{
+        transform: translateX(0%);
+    }
+    80%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+//icons.scss animation for filling the heart (actually, it makes the .icon-hider disapear revealing the heart behind)
 @keyframes fill-heart {
     100% {
         transform: translateY(-50%) rotateZ(540deg);
     }
 
 }
-// loader animation 
+//loader.scss loader animation 
 @keyframes load {
     0% {
         transform: rotateZ(0deg);
@@ -15,7 +30,7 @@
     }
 
 }
-// loader fade out 
+//loader.scss loader fade out 
 @keyframes fadeout {
     0%{
         opacity: 1;
@@ -25,7 +40,8 @@
         z-index: -1;
     }
 }
-// cards of the nenus fade in 
+
+//sections.scss cards of the nenus fade in 
 @keyframes tile-apparition {
     0%{
         opacity: 0;
@@ -38,7 +54,37 @@
     
 }
 
-// rotate check icon when card is selected 
+//sections.scss make appear the different section titles 
+@keyframes title-appear {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+//sections.scss menu page: it makes appear the underline below the section titles
+@keyframes underline-appear {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 45px;
+    }
+}
+
+//sections.scss makes appear the different restaurant cards in home page 
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+//cards.scss rotate check icon when card is selected 
 @keyframes rotate-icon {
     0% {
         transform: rotateZ(-180deg);
@@ -48,3 +94,18 @@
         transform: rotateZ(0deg);
     }
 }
+
+
+// .menu__page.scss animation order button 
+@keyframes resize-btn {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+

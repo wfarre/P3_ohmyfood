@@ -3,9 +3,26 @@
 
     &--functionning {
         margin: 50px 0;
-        @include tablet-only{
-            width: calc(100% - 2*$padding-lr - 12px);
+
+        .section__header{
+            &::after{
+                background-color: $white;
+            }
         }
+
+        // animation of the buttons from functionning section 
+        @for $i from 1 through 4 {
+            .btn:nth-child(#{$i}) {
+                animation: fadein 1.5s;
+                animation-fill-mode: forwards;
+                animation-delay: 500ms + $i * 300ms 
+            }
+        }
+
+        @include tablet-only{
+            width: calc( 100% - 2 * $padding-lr - 12px );
+        }
+        
         .button--container {
             @include flexbox(column, flex-start, center);
             margin-left: 12px;
@@ -28,8 +45,15 @@
         @include desktop-only{
             border-radius: 10px;
             background-color: $bg-color--card;
-            width: calc(100% - 2*$padding-lr);
+            width: calc( 100% - 2 * $padding-lr );
             padding-top: 0 ;
+        }
+        @for $i from 1 through 4 {
+            .card:nth-child(#{$i}) {
+                animation: fadein 4s;
+                animation-fill-mode: forwards;
+                animation-delay: 500ms + $i * 300ms
+            }
         }
     }
     &--grey-bg{
@@ -59,16 +83,16 @@
         @include box-sizing(250px, 100%);
     }
 
-    .block__content {
+    .section__content {
         @include flexbox(column, space-between);
         row-gap: 16px;
     }
-
+// animation menu 
     @for $i from 1 through 4 {
         .card:nth-child(#{$i}) {
             animation: tile-apparition 3s;
             animation-fill-mode: forwards;
-            animation-delay: $i*200ms
+            animation-delay: 1.5s + $i * 200ms
         }
     }
 
@@ -80,9 +104,11 @@
 
         &::before {
             content: " ";
-            @include box-sizing(3px, 45px, 0, absolute);
+            @include box-sizing(3px, 0, 0, absolute);
             background-color: $color-tertiary;
             bottom: 0;
+            animation: underline-appear 1.5s 2s forwards;
         }
     }
 }
+

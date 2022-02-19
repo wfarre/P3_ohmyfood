@@ -29,47 +29,26 @@
 
     <nav id="nav" class="nav">
         <div class="logo">
-            <h4 class="company-title cursive-title">ohmyfood</h1>
+            <h4 class="company-title cursive-title">ohmyfood</h4>
         </div>
         <div class="location">
             <i class="fas fa-map-marker-alt icon-location"></i>
-            <h3 class="loaction-txt">Paris, Belleville</h3>
+            <p class="loaction-txt">Paris, Belleville</p>
         </div>
     </nav>
 
     <header id="header" class="main-header">
-        <!-- <div class="container container--header"> -->
-        <!-- <div class="heading"> -->
         <div class="bg-img">
             <img src="./images/restaurants/delices-des-sens.jpg" alt="">
         </div>
         <div class="header-title">
-            <h2 class="header-title__main">Réservez le menu qui vous convient</h1>
+            <h1 class="header-title__main">Réservez le menu qui vous convient</h1>
                 <p class="header-title__sub">Découvrez des restaurants d'exception, sélectionnés par nos soins.
                 </p>
         </div>
         <div class="btn-wrapper main-header--btn-wrapper">
             <button class="btn btn--gradient btn--explore">Explorez nos restaurants</button>
         </div>
-
-        <!-- </div> -->
-        <!-- <div class="carousel">
-                <div class="carousel__item">
-                    <img src="./images/restaurants/a-la-francaise.jpg" alt="">
-                </div>
-                <div class="carousel__item">
-                    <img src="./images/restaurants/delices-des-sens.jpg" alt="">
-                </div>
-                <div class="carousel__item">
-                    <img src="./images/restaurants/la-note-enchatee.jpg" alt="">
-                </div>
-                <div class="carousel__item">
-                    <img src="./images/restaurants/palette-du-gout.jpg" alt="">
-                </div>
-            </div> -->
-        <!-- </div> -->
-
-
     </header>
 
     <main id="main" class="main">
@@ -77,11 +56,11 @@
         <div class="container container--wrapper"> -->
 
             <section id="functionning" class="section section--functionning">
-                <header class="block__header">
-                    <h2 class="section-title section-title--big">Fonctionnement</h1>
+                <header class="section__header">
+                    <h2 class="section-title section-title--big">Fonctionnement</h2>
                 </header>
 
-                <div class="block__content button--container">
+                <div class="section__content button--container">
                     <div class="btn btn--functionning">
                         <div class="index">
                             <span>1</span>
@@ -116,14 +95,14 @@
             </section> <!-- #functionning  -->
 
             <section id="restaurant" class="section section--grey-bg section--restaurant ">
-                <header class="block__header">
-                    <h2 class="section-title section-title--big">Restaurants</h1>
+                <header class="section__header">
+                    <h2 class="section-title section-title--big">Restaurants</h2>
                 </header>
-                <div class="block__content">
+                <div class="section__content">
                     <div class="container">
                         <a class="card card--home new" href="./menu_la-palette-du-gout.html">
                             <div class="image-wrapper">
-                                <img src="./images/restaurants/palette-du-gout.jpg" alt="">
+                                <img src="./images/restaurants/palette-du-gout.jpg" alt="picture restaurant palette-du-gout">
                             </div>
                             <div class="card__content">
                                 <div class="card__content__text">
@@ -133,7 +112,7 @@
                                 <label class="icon-wrapper icon-wrapper--heart" id="favorite1">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite1">
                                     <i class="fas fa-heart icon icon--heart icon--heart--filled"></i>
-                                    <div class="icon-hider"></div>
+                                    <span class="icon-hider"></span>
                                     <i class="fas fa-heart icon icon--heart icon--heart--empty"></i>
                                 </label>
                             </div>
@@ -141,7 +120,7 @@
 
                         <a class="card card--home new" href="./menu_la-note-enchantee.html">
                             <div class="image-wrapper">
-                                <img src="./images/restaurants/la-note-enchatee.jpg" alt="">
+                                <img src="./images/restaurants/la-note-enchatee.jpg" alt="picture restaurant la note enchantée">
                             </div>
 
                             <div class="card__content">
@@ -152,7 +131,7 @@
                                 <label class="icon-wrapper icon-wrapper--heart" id="favorite2">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite2">
                                     <i class="fas fa-heart icon icon--heart icon--heart--filled"></i>
-                                    <div class="icon-hider"></div>
+                                    <span class="icon-hider"></span>
                                     <i class="fas fa-heart icon icon--heart icon--heart--empty"></i>
                                 </label>
                             </div>
@@ -160,7 +139,7 @@
 
                         <a class="card card--home" href="./menu_a-la-francaise.html">
                             <div class="image-wrapper">
-                                <img src="./images/restaurants/a-la-francaise.jpg" alt="">
+                                <img src="./images/restaurants/a-la-francaise.jpg" alt="picture restaurant à la française">
                             </div>
 
                             <div class="card__content">
@@ -168,10 +147,10 @@
                                     <h3 class="card__content__text__title">A la française</h3>
                                     <p class="card__content__text__info">Cité Rouge</p>
                                 </div>
-                                <label class="icon-wrapper icon-wrapper--heart" id="favorite3">
-                                    <input class="checkbox checkbox--heart" type="checkbox" for="favorite3">
+                                <input class="checkbox checkbox--heart" type="checkbox" id="favorite3">
+                                <label class="icon-wrapper icon-wrapper--heart" for="favorite3">
                                     <i class="fas fa-heart icon icon--heart icon--heart--filled"></i>
-                                    <div class="icon-hider"></div>
+                                    <span class="icon-hider"></span>
                                     <i class="fas fa-heart icon icon--heart icon--heart--empty"></i>
                                 </label>
                             </div>
@@ -179,7 +158,7 @@
 
                         <a class="card card--home" href="./menu_delices-des-sens.html">
                             <div class="image-wrapper">
-                                <img src="./images/restaurants/delices-des-sens.jpg" alt="">
+                                <img src="./images/restaurants/delices-des-sens.jpg" alt="picture restaurant delices-des-sens">
                             </div>
 
                             <div class="card__content">
@@ -190,7 +169,7 @@
                                 <label class="icon-wrapper icon-wrapper--heart" id="favorite4">
                                     <input class="checkbox checkbox--heart" type="checkbox" for="favorite4">
                                     <i class="fas fa-heart icon icon--heart icon--heart--filled"></i>
-                                    <div class="icon-hider"></div>
+                                    <span class="icon-hider"></span>
                                     <i class="fas fa-heart icon icon--heart icon--heart--empty"></i>
                                 </label>
                             </div>
@@ -204,8 +183,8 @@
     <footer id="footer">
         <div class="footer">
 
-            <div class="block__header">
-                <h4 class="company-title">ohmyfood</h1>
+            <div class="footer__header">
+                <h4 class="company-title">ohmyfood</h4>
             </div>
 
             <ul class="footer__menu">
@@ -244,8 +223,6 @@
         </div>
     </footer>
 
-
-    <script src="" async defer></script>
 </body>
 
 </html>

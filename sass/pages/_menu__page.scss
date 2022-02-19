@@ -29,4 +29,9 @@
     .icon-hider {
         background-color: $bg-color;
     }
+
+    .btn--explore{
+        transform: scale(0);
+        animation: resize-btn 1s 2.5s forwards;
+    }
 }

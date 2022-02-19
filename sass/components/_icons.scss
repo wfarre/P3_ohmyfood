@@ -4,8 +4,10 @@
         transform: rotateZ(-180deg);
     }
 
+
+
     &--heart {
-        padding: 1px;
+        padding: 2px;
         position: absolute;
         @include absolute-positionning;
         &--filled{
@@ -34,12 +36,12 @@
     align-self: center;
 
     &--heart {
-        @include box-sizing(30px, 30px);
+        @include box-sizing(25px, 27px);
         @include desktop-only {
             &:hover {
                 cursor: pointer;
                 &>.icon-hider {
-                    animation: fill-heart 3s ease-in-out forwards;
+                    animation: fill-heart 3s ease-out forwards;
                 }
                 &>.icon--heart--empty {
                     animation: fadeout 500ms 2.5s forwards;
@@ -51,6 +53,7 @@
         .icon-hider {
             @include box-sizing(200%, 200%, 35%, absolute);
             background-color: $bg-color--card;
+            // background-color: red;
             left: -50%;
             bottom: 0;
             z-index: 60;

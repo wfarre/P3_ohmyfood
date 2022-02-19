@@ -5,5 +5,12 @@
         @include box-sizing(100%, 100%);
         object-fit: cover;
     }
+}
 
+.main--menu{
+    .image-wrapper{
+        @include tablet-only{
+            height: 300px;
+        }
+    }
 }

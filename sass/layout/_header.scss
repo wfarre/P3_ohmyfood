@@ -53,3 +53,27 @@
     }
 }
 
+
+// make a box to hide the section titles behind 
+.section--menu__header, .section__header{
+    position: relative;
+    &:after{
+        content: " ";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        background-color: $bg-color;
+        z-index: 5;
+    }
+}
+
+.section__header{
+    &:after{
+        @include desktop-only{
+            background-color: $white;
+        }
+    } 
+}
+

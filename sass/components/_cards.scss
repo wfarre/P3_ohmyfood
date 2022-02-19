@@ -4,6 +4,7 @@
     @include box-sizing(250px, 100%, 10px);
     overflow: hidden;
     background-color: $bg-color--card;
+    opacity: 0;
 
     &:hover {
         cursor: pointer;
@@ -69,15 +70,15 @@
 
     &--menu {
         @include box-sizing(70px, 100%, 10px);
-        opacity: 0;
         transform: translateY(50px);
         align-content: center;
+        z-index: 10;
 
         @include desktop-only {
             width: 100%;
             &:hover {
-                &>.card__content {
-                    width: calc(100% - 2*$padding-lr - 60px);
+                & > .card__content {
+                    width: calc(100% - 2 * $padding-lr - 60px);
                 }
                 &>.card__content>.card__content__text {
                     width: calc(100% - 12%);
@@ -94,13 +95,13 @@
             }
         }
         .card__content {
-            @include box-sizing(100%, calc(100% - 2*$padding-lr));
+            @include box-sizing(100%, calc(100% - 2 * $padding-lr));
             flex-wrap: nowrap;
             margin: 14px 0;
 
             transition: width 1s;
             &__text {
-                @include box-sizing(100%, calc(100% - 2*$padding-lr));         
+                @include box-sizing(100%, calc(100% - 2 * $padding-lr));         
                 &__title {
                     @extend %hidden-text;
                 }
@@ -120,7 +121,7 @@
         }
 
         input:checked~.card__content {
-            width: calc(100% - 2*$padding-lr - 60px);
+            width: calc(100% - 2 * $padding-lr - 60px);
         }
 
         input:checked~.card__content>.card__content__text {

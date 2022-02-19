@@ -10,20 +10,24 @@
         background:$color-gradient;
         color: white;
         border-radius: 40px;
+        transition: transform 1s;
+        
 
         &:before{
             content: " ";
             @include box-sizing(100%, 100%, 40px, absolute);
             @include absolute-positionning;
             background: $bg-color--card;
-            box-shadow:  0px 5px 16px $black;
+            box-shadow:  10px 15px 16px $black;
             opacity: 0;
             transition: opacity 0.5s
         }
         &:hover{
             cursor: pointer;
+            transform: translate(-5px, -2px);
+            // box-shadow: 7px 10px 8px $box-shadow-color;
             &:before{
-                opacity: 0.3;
+                opacity: 0.2;
             }
         }
 
@@ -36,6 +40,7 @@
         background-color: $bg-color;
         border-radius: 20px;
         padding: 0 8%;
+        opacity: 0;
 
         @include tablet-only{
             padding: 0 3%;
@@ -86,3 +91,5 @@
         z-index: 1;
     }
 }
+
+
