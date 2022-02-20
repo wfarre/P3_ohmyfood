@@ -248,22 +248,21 @@
 .checkbox {
   display: none;
 }
-
-.checkbox:checked ~ .icon-hider {
+.checkbox:checked ~ .icon-wrapper--heart > .icon-hider {
   animation: fill-heart 2s ease-in-out forwards;
 }
 @media all and (min-width: 993px) {
-  .checkbox:checked ~ .icon-hider {
+  .checkbox:checked ~ .icon-wrapper--heart > .icon-hider {
     animation: none;
     opacity: 0;
   }
 }
-.checkbox:checked ~ .icon--heart--empty {
+.checkbox:checked ~ .icon-wrapper--heart > .icon-hider + .icon--heart--empty {
   opacity: 0;
   transition-delay: 1.5s;
 }
 @media all and (min-width: 993px) {
-  .checkbox:checked ~ .icon--heart--empty {
+  .checkbox:checked ~ .icon-wrapper--heart > .icon-hider + .icon--heart--empty {
     transition: none;
   }
 }
@@ -754,10 +753,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: 0;
+  position: relative;
   height: 60px;
   width: 100%;
-  border-radius: relative;
+  border-radius: 0;
   background-color: #ffffff;
 }
 .nav .location {
@@ -1070,12 +1069,35 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: "Roboto", sans-serif;
+  color: #000000;
   margin: 0;
 }
 
 .block__header {
   position: relative;
+}
+
+.menu-link {
+  content: " ";
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.menu-label {
+  content: " ";
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

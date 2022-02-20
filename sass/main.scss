@@ -33,10 +33,38 @@
 
 body {
     @include box-sizing(100%, 100%);
-    @include font-text(16px, 400, $main-font);
+    @include font-text(16px, 400, $font-color--main, $main-font);
     margin: 0;
 }
 
 .block__header{
         position: relative;
     }
+
+
+// .input[checkbox]:checked ~ .icon-wrapper{
+
+// }
+
+.menu-link{
+    content: " ";
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    z-index: 1;
+}
+
+.menu-label{
+    content: " ";
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    z-index: 1;
+    cursor: pointer;
+}

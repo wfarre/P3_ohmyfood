@@ -3,7 +3,7 @@
 
     .logo{
         @include flexbox(row, center, center);
-        @include box-sizing(60px, 100%, relative, 0, $bg-color--card);
+        @include box-sizing(60px, 100%, 0, relative, $bg-color--card);
     }
 
     .location {

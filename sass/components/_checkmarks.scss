@@ -3,35 +3,38 @@
     width: 60px;
     visibility: visible;
     z-index: 100;
+
     .icon--checkmark {
         animation: rotate-icon 400ms forwards;
     }
 }
 
 // favorite checkmark 
-
 .checkbox {
-    display: none
-}
-
-.checkbox{
+    display: none;
     &:checked {
-        &~.icon-hider {
-            animation: fill-heart 2s ease-in-out forwards;
-            @include desktop-only {
-                animation: none;
-                opacity: 0;
-            }
-        }
-        &~.icon--heart--empty{
-            opacity: 0;
-            transition-delay: 1.5s;
-            @include desktop-only{
-                transition:none;
+        & ~ .icon-wrapper--heart {
+            & > .icon-hider {
+                animation: fill-heart 2s ease-in-out forwards;
 
+                @include desktop-only {
+                    animation: none;
+                    opacity: 0;
+                }
+
+                & + .icon--heart--empty {
+                    opacity: 0;
+                    transition-delay: 1.5s;
+
+                    @include desktop-only {
+                        transition: none;
+
+                    }
+
+                }
             }
         }
     }
+
 }
-
-
+    

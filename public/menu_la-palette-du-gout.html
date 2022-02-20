@@ -56,8 +56,8 @@
                     <h1 class="cursive-title">
                         La palette du goût
                     </h1>
-                    <label class="icon-wrapper icon-wrapper--heart" id="favorite1">
-                        <input class="checkbox checkbox--heart" type="checkbox" for="favorite1">
+                    <input class="checkbox checkbox--heart" type="checkbox" id="favorite1" />
+                    <label class="icon-wrapper icon-wrapper--heart" for="favorite1">
                         <i class="fas fa-heart icon icon--heart icon--heart--filled"></i>
                         <span class="icon-hider"></span>
                         <i class="fas fa-heart icon icon--heart icon--heart--empty"></i>
@@ -73,8 +73,9 @@
                             <h3 class="section-title section-title--small">Entrées</h3>
                         </header>
                         <div class="block__content">
-                            <label class="card card--menu" for="apetizer1">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="apetizer" id="apetizer1">
+                                <label class="menu-label" for="apetizer1"></label>
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title card-text--bold">Fricassée d'escargot</h4>
@@ -87,14 +88,18 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="apetizer2">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="apetizer" id="apetizer2">
+                                <label class="menu-label" for="apetizer2"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
-                                        <h4 class="card__content__text__title card-text--bold">Foie gras de canard mi-cuit</h4>
-                                        <p class="card__content__text__info card-text--light">Et ses copeaux de truffe noire</p>
+                                        <h4 class="card__content__text__title card-text--bold">Foie gras de canard
+                                            mi-cuit</h4>
+                                        <p class="card__content__text__info card-text--light">Et ses copeaux de truffe
+                                            noire</p>
                                     </div>
                                     <div class="price">
                                         <span>35€</span>
@@ -103,14 +108,17 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="apetizer3">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="apetizer" id="apetizer3">
+                                <label class="menu-label" for="apetizer3"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title card-text--bold">Oeuf au plat</h4>
-                                        <p class="card__content__text__info card-text--light">Assaisonné à la truffe sur lit de caviar
+                                        <p class="card__content__text__info card-text--light">Assaisonné à la truffe sur
+                                            lit de caviar
                                         </p>
                                     </div>
                                     <div class="price">
@@ -120,8 +128,8 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon icon--checkmark"></i>
                                 </div>
-                            </label>
-                        </div>   <!-- .block__content  -->
+                            </div>
+                        </div> <!-- .block__content  -->
 
                     </section> <!-- #apetizer -->
 
@@ -130,12 +138,16 @@
                             <h3 class="section-title section-title--small">Plats</h3>
                         </header>
                         <div class="block__content">
-                            <label class="card card--menu" for="main1">
+                            <div class="card card--menu" >
                                 <input type="radio" class="radio-check" name="main" id="main1">
+                                <label class="menu-label" for="main1"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
-                                        <h4 class="card__content__text__title card-text--bold">Filet de boeuf aux herbes</h4>
-                                        <p class="card__content__text__info card-text--light">Accompagné de sa ribambelle de légumes</p>
+                                        <h4 class="card__content__text__title card-text--bold">Filet de boeuf aux herbes
+                                        </h4>
+                                        <p class="card__content__text__info card-text--light">Accompagné de sa
+                                            ribambelle de légumes</p>
                                     </div>
                                     <div class="price">
                                         <span>40€</span>
@@ -144,14 +156,18 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="main2">
+                            <div class="card card--menu" >
                                 <input type="radio" class="radio-check" name="main" id="main2">
+                                <label class="menu-label" for="main2"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
-                                        <h4 class="card__content__text__title card-text--bold">Parmentier de queue de boeuf</h4>
-                                        <p class="card__content__text__info card-text--light">À la truffe noire sur sa purée de panais
+                                        <h4 class="card__content__text__title card-text--bold">Parmentier de queue de
+                                            boeuf</h4>
+                                        <p class="card__content__text__info card-text--light">À la truffe noire sur sa
+                                            purée de panais
                                         </p>
                                     </div>
                                     <div class="price">
@@ -161,10 +177,12 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="main3">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="main" id="main3">
+                                <label class="menu-label" for="main3"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title card-text--bold">Filet de turbot</h4>
@@ -177,8 +195,8 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
-                        </div>   <!-- .block__content  -->
+                            </div>
+                        </div> <!-- .block__content  -->
                         <div class="separator"></div>
                     </section><!-- #dish  -->
 
@@ -187,8 +205,10 @@
                             <h3 class="section-title section-title--small">Desserts</h3>
                         </header>
                         <div class="block__content">
-                            <label class="card card--menu" for="dessert1">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="dessert" id="dessert1">
+                                <label class="menu-label" for="dessert1"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title card-text--bold">Paris-Brest</h4>
@@ -201,14 +221,18 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="dessert2">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="dessert" id="dessert2">
+                                <label class="menu-label" for="dessert2"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
-                                        <h4 class="card__content__text__title card-text--bold">Macaron au chocolat d'exception </h4>
-                                        <p class="card__content__text__info card-text--light">Et glace à la vanille de Madagascar</p>
+                                        <h4 class="card__content__text__title card-text--bold">Macaron au chocolat
+                                            d'exception </h4>
+                                        <p class="card__content__text__info card-text--light">Et glace à la vanille de
+                                            Madagascar</p>
                                     </div>
                                     <div class="price">
                                         <span>22€</span>
@@ -217,14 +241,17 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
+                            </div>
 
-                            <label class="card card--menu" for="dessert3">
+                            <div class="card card--menu">
                                 <input type="radio" class="radio-check" name="dessert" id="dessert3">
+                                <label class="menu-label" for="dessert3"></label>
+
                                 <div class="card__content">
                                     <div class="card__content__text">
                                         <h4 class="card__content__text__title card-text--bold">Mousse au chocolat </h4>
-                                        <p class="card__content__text__info card-text--light">Au piment d'Espelette et à la truffe noire
+                                        <p class="card__content__text__info card-text--light">Au piment d'Espelette et à
+                                            la truffe noire
                                         </p>
                                     </div>
                                     <div class="price">
@@ -234,8 +261,8 @@
                                 <div class="icon-wrapper icon-wrapper--checkmark">
                                     <i class="fas fa-check-circle icon icon--checkmark"></i>
                                 </div>
-                            </label>
-                        </div>   <!-- .block__content  -->
+                            </div>
+                        </div> <!-- .block__content  -->
                         <div class="separator"></div>
                     </section><!-- #dessert  -->
                 </div><!-- .container--wrapper -->
