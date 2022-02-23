@@ -31,40 +31,33 @@
 @import "./pages/menu__page";
 
 
-body {
+.body {
     @include box-sizing(100%, 100%);
     @include font-text(16px, 400, $font-color--main, $main-font);
     margin: 0;
+    &--home{
+        margin-top: 110px;
+    }
+    &--menu{
+        margin-top: 60px;
+    }
 }
 
-.block__header{
-        position: relative;
-    }
-
-
-// .input[checkbox]:checked ~ .icon-wrapper{
-
-// }
+// .block__header{
+//         position: relative;
+//  }
 
 .menu-link{
     content: " ";
-    position: absolute;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top:0;
+    @include box-sizing(100%, 100%,0,absolute);
+    @include absolute-positionning;
     z-index: 1;
 }
 
 .menu-label{
     content: " ";
-    position: absolute;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top:0;
+    @include box-sizing(100%, 100%,0,absolute);
+    @include absolute-positionning;
     z-index: 1;
     cursor: pointer;
 }

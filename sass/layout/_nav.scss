@@ -1,5 +1,8 @@
 .nav{
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 
     .logo{
         @include flexbox(row, center, center);

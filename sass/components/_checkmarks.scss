@@ -12,9 +12,10 @@
 // favorite checkmark 
 .checkbox {
     display: none;
+
     &:checked {
-        & ~ .icon-wrapper--heart {
-            & > .icon-hider {
+        &~.icon-wrapper--heart {
+            &>.icon-hider {
                 animation: fill-heart 2s ease-in-out forwards;
 
                 @include desktop-only {
@@ -22,7 +23,7 @@
                     opacity: 0;
                 }
 
-                & + .icon--heart--empty {
+                &+.icon--heart--empty {
                     opacity: 0;
                     transition-delay: 1.5s;
 
@@ -37,4 +38,3 @@
     }
 
 }
-    

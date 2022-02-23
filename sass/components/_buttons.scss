@@ -1,65 +1,69 @@
-.btn{
+.btn {
     @include font-text(16px);
     @extend %box-shadow-style;
     border: none;
-    
-    &--explore{
+
+    &--explore {
         position: relative;
-        // @include button-layout(linear-gradient($color-secondary,$color-primary), white, 16px, 40px, 15px 25px );
         padding: 15px 25px;
-        background:$color-gradient;
+        background: $color-gradient;
         color: white;
         border-radius: 40px;
-        transition: transform 1s;
-        
 
-        &:before{
+        transition: transform 1s;
+
+        &:before {
             content: " ";
             @include box-sizing(100%, 100%, 40px, absolute);
             @include absolute-positionning;
             background: $bg-color--card;
-            box-shadow:  10px 15px 16px $black;
+            box-shadow: 10px 15px 16px $black;
             opacity: 0;
             transition: opacity 0.5s
         }
-        &:hover{
+
+        &:hover {
             cursor: pointer;
+            
             transform: translate(-5px, -2px);
-            // box-shadow: 7px 10px 8px $box-shadow-color;
-            &:before{
+
+            &:before {
                 opacity: 0.2;
             }
         }
 
     }
 
-    &--functionning{
-        // @include button-layout($bg-color, $black, 16px, 20px, 0 8% );
+    &--functionning {
         @include flexbox(row, flex-start, center);
-        @include box-sizing(80px, calc(100% - 2*$padding-lr - 12px) , 20px);
+        @include box-sizing(80px, calc(100% - 2 * $padding-lr - 12px), 20px);
         background-color: $bg-color;
         border-radius: 20px;
         padding: 0 8%;
         opacity: 0;
 
-        @include tablet-only{
-            padding: 0 3%;
-        }
-        @include desktop-only{
+        @include tablet-only {
             padding: 0 3%;
         }
 
-        &__icon-box{
+        @include desktop-only {
+            padding: 0 3%;
+        }
+
+        &__icon-box {
             @include flexbox(row, flex-start, center);
             @include box-sizing(100%, 50px);
-            .icon{
+
+            .icon {
                 font-size: 24px;
-                width: 28px; 
+                width: 28px;
             }
         }
-        &__text{
+
+        &__text {
             font-weight: bold;
-        } 
+        }
+
         .index {
             @include box-sizing(24px, 24px, 100%, absolute);
             @include flexbox(row, center, center);
@@ -71,7 +75,7 @@
     }
 }
 
-.btn-wrapper{
+.btn-wrapper {
     margin-top: 45px;
     text-align: center;
 }
@@ -79,17 +83,16 @@
 .active {
     position: relative;
 
-    .icon{
+    .icon {
         color: $color-primary;
     }
+
     &::before {
         content: " ";
-        @include box-sizing(100%,100%, 20px, absolute);
+        @include box-sizing(100%, 100%, 20px, absolute);
         @include absolute-positionning;
         background-color: $color-primary;
         opacity: 0.1;
         z-index: 1;
     }
 }
-
-

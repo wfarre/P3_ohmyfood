@@ -4,7 +4,7 @@
     background-color: $bg-color--card;
     z-index: 999;
 
-    animation: fadeout 2s forwards;
+    animation: fadeout 1s forwards;
     .loader {
         @include box-sizing(100px, 100px, 100%, fixed);
         border: 16px solid $color-tertiary;

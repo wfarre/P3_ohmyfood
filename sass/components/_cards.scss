@@ -8,7 +8,7 @@
 
     &:hover {
         cursor: pointer;
-       
+
 
         &::after {
             content: " ";
@@ -22,26 +22,32 @@
     &__content {
         @include flexbox(row, space-between, center);
         padding: 0 $padding-lr;
+
         &__text {
             @include flexbox(column, space-between);
+
             &__title {
                 margin: 0;
             }
+
             &__info {
                 margin: 0;
             }
         }
     }
+
     &--home {
         text-decoration: none;
         color: $black;
-        @include tablet-only{
+
+        @include tablet-only {
             width: 48%;
         }
 
         @include desktop-only {
             width: 32%;
         }
+
         &.new::before {
             content: "Nouveau";
             @include flexbox(row, center, center);
@@ -54,6 +60,7 @@
             @include absolute-positionning(15px, auto);
             right: 3%;
         }
+
         .card__content {
             @include flexbox(row, space-between, center);
             overflow: hidden;
@@ -77,13 +84,16 @@
 
         @include desktop-only {
             width: 100%;
+
             &:hover {
-                & > .card__content {
+                &>.card__content {
                     width: calc(100% - 2 * $padding-lr - 60px);
                 }
+
                 &>.card__content>.card__content__text {
                     width: calc(100% - 12%);
                 }
+
                 &>.icon-wrapper--checkmark {
                     width: 60px;
                     visibility: visible;
@@ -95,17 +105,21 @@
                 }
             }
         }
+
         .card__content {
             @include box-sizing(100%, calc(100% - 2 * $padding-lr));
             flex-wrap: nowrap;
             margin: 14px 0;
 
             transition: width 1s;
+
             &__text {
-                @include box-sizing(100%, calc(100% - 2 * $padding-lr));         
+                @include box-sizing(100%, calc(100% - 2 * $padding-lr));
+
                 &__title {
                     @extend %hidden-text;
                 }
+
                 &__info {
                     @extend %hidden-text;
                 }
@@ -130,4 +144,3 @@
         }
     }
 }
-

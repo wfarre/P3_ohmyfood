@@ -48,11 +48,13 @@
             width: calc( 100% - 2 * $padding-lr );
             padding-top: 0 ;
         }
+
+        // animation of the different restaurants 
         @for $i from 1 through 4 {
             .card:nth-child(#{$i}) {
                 animation: fadein 4s;
                 animation-fill-mode: forwards;
-                animation-delay: 500ms + $i * 300ms
+                animation-delay: 200ms + $i * 300ms
             }
         }
     }
@@ -87,12 +89,13 @@
         @include flexbox(column, space-between);
         row-gap: 16px;
     }
+    
 // animation menu 
     @for $i from 1 through 4 {
         .card:nth-child(#{$i}) {
-            animation: tile-apparition 3s;
+            animation: tile-apparition 2s;
             animation-fill-mode: forwards;
-            animation-delay: 1.5s + $i * 200ms
+            animation-delay: 500ms + $i * 200ms
         }
     }
 
@@ -107,7 +110,9 @@
             @include box-sizing(3px, 0, 0, absolute);
             background-color: $color-tertiary;
             bottom: 0;
-            animation: underline-appear 1.5s 2s forwards;
+
+            // animation of the underline below the section title 
+            animation: underline-appear 1.5s 500ms forwards;
         }
     }
 }
