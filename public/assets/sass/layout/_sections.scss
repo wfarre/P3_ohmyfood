@@ -89,17 +89,16 @@
         @include flexbox(column, space-between);
         row-gap: 16px;
     }
-    
+
 // animation menu 
     @for $i from 1 through 4 {
         .card:nth-child(#{$i}) {
             animation: tile-apparition 2s;
             animation-fill-mode: forwards;
-            animation-delay: 500ms + $i * 200ms
+            animation-delay: 500ms + $i * 200ms;
         }
     }
 
-    
     &__header {
         position: relative;
         padding-bottom: 10px;
