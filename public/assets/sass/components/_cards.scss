@@ -9,7 +9,6 @@
     &:hover {
         cursor: pointer;
 
-
         &::after {
             content: " ";
             @include box-sizing(100%, 100%, 0, absolute);
@@ -73,6 +72,13 @@
                     margin-bottom: 5px;
                 }
             }
+        }
+
+        .menu-link {
+            content: " ";
+            @include box-sizing(100%, 100%, 0, absolute);
+            @include absolute-positionning;
+            z-index: 1;
         }
     }
 
@@ -142,5 +148,13 @@
         input:checked~.card__content>.card__content__text {
             width: calc(100% - 12%);
         }
+    }
+
+    .menu-label {
+        content: " ";
+        @include box-sizing(100%, 100%, 0, absolute);
+        @include absolute-positionning;
+        z-index: 110;
+        cursor: pointer;
     }
 }

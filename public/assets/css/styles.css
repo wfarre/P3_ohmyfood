@@ -1,3 +1,68 @@
+.cursive-title {
+  font-size: 30px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  color: #000000;
+}
+
+.section-title {
+  animation: title-appear 2s forwards;
+  margin-bottom: 25px;
+  z-index: 0;
+}
+.section-title--big {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+.section-title--small {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card-text--bold {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #000000;
+}
+.card-text--medium {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+.card-text--light {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #000000;
+}
+
+.body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}
+.body--home {
+  margin-top: 110px;
+}
+.body--menu {
+  margin-top: 60px;
+}
+
 .card--menu .card__content__text__info, .card--menu .card__content__text__title {
   overflow-x: hidden;
   white-space: nowrap;
@@ -91,52 +156,6 @@
     transform: scale(1);
   }
 }
-.cursive-title {
-  font-size: 30px;
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-  color: #000000;
-}
-
-.section-title {
-  animation: title-appear 2s forwards;
-  margin-bottom: 25px;
-  z-index: 0;
-}
-.section-title--big {
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: #000000;
-}
-.section-title--small {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #000000;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.card-text--bold {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  color: #000000;
-}
-.card-text--medium {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #000000;
-}
-.card-text--light {
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #000000;
-}
-
 .image-wrapper {
   position: relative;
   height: 170px;
@@ -487,6 +506,17 @@
   color: #000000;
   margin-bottom: 5px;
 }
+.card--home .menu-link {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 .card--menu {
   position: relative;
   height: 70px;
@@ -548,6 +578,18 @@
 }
 .card--menu input:checked ~ .card__content > .card__content__text {
   width: 88%;
+}
+.card .menu-label {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  cursor: pointer;
 }
 
 .loader-wrapper {
@@ -1061,50 +1103,6 @@
 .main--menu .btn--explore {
   transform: scale(0);
   animation: resize-btn 1s 1.5s forwards;
-}
-
-.body {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border-radius: 0;
-  background-color: transparent;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #000000;
-  margin: 0;
-}
-.body--home {
-  margin-top: 110px;
-}
-.body--menu {
-  margin-top: 60px;
-}
-
-.menu-link {
-  content: " ";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 0;
-  background-color: transparent;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.menu-label {
-  content: " ";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 0;
-  background-color: transparent;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

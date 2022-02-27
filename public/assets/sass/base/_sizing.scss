@@ -1,0 +1,13 @@
+.body {
+    @include box-sizing(100%, 100%);
+    @include font-text(16px, 400, $font-color--main, $main-font);
+    margin: 0;
+    &--home{
+        margin-top: 110px;
+    }
+    &--menu{
+        margin-top: 60px;
+    }
+}
+
+$padding-lr: 5%;

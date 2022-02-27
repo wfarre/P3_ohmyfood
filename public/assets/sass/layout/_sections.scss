@@ -1,70 +1,69 @@
-.section{
+.section {
     padding: 0 $padding-lr;
 
     &--functionning {
         margin: 50px 0;
 
-        .section__header{
-            &::after{
+        .section__header {
+            &::after {
                 background-color: $white;
             }
         }
 
+
         // animation of the buttons from functionning section 
-        @for $i from 1 through 4 {
-            .btn:nth-child(#{$i}) {
-                animation: fadein 1.5s;
-                animation-fill-mode: forwards;
-                animation-delay: 500ms + $i * 300ms 
-            }
+        .btn{
+            @include animation-domino(1, 4, fadein, 1.5s, 500ms, 300ms);
         }
 
-        @include tablet-only{
-            width: calc( 100% - 2 * $padding-lr - 12px );
+        @include tablet-only {
+            width: calc(100% - 2 * $padding-lr - 12px);
         }
-        
+
         .button--container {
             @include flexbox(column, flex-start, center);
             margin-left: 12px;
             row-gap: 18px;
-            @include tablet-only{
+
+            @include tablet-only {
                 @include flexbox(row, space-between, center);
-                gap:1.5rem;
+                gap: 1.5rem;
                 width: 100%;
             }
-            @include desktop-only{
+
+            @include desktop-only {
                 @include flexbox(row, space-between, center);
-                gap:1.5rem;
+                gap: 1.5rem;
                 width: 100%;
             }
         }
-    
+
     }
-    &--restaurant{
+
+    &--restaurant {
         padding-top: 50px;
-        @include desktop-only{
+
+        @include desktop-only {
             border-radius: 10px;
             background-color: $bg-color--card;
-            width: calc( 100% - 2 * $padding-lr );
-            padding-top: 0 ;
+            width: calc(100% - 2 * $padding-lr);
+            padding-top: 0;
         }
 
         // animation of the different restaurants 
-        @for $i from 1 through 4 {
-            .card:nth-child(#{$i}) {
-                animation: fadein 4s;
-                animation-fill-mode: forwards;
-                animation-delay: 200ms + $i * 300ms
-            }
+        .card{
+            @include animation-domino(1, 4, fadein, 4s, 200ms, 300ms);
         }
     }
-    &--grey-bg{
-            padding-bottom: 60px;
-            background-color: $bg-color;
-            @include desktop-only{
-                background-color: transparent;
-            }
-        } 
+
+    &--grey-bg {
+        padding-bottom: 60px;
+        background-color: $bg-color;
+
+        @include desktop-only {
+            background-color: transparent;
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////
@@ -73,7 +72,7 @@
     padding: 0;
     margin-bottom: 50px;
 
-    @include tablet-only{
+    @include tablet-only {
         width: 48%;
     }
 
@@ -90,13 +89,9 @@
         row-gap: 16px;
     }
 
-// animation menu 
-    @for $i from 1 through 4 {
-        .card:nth-child(#{$i}) {
-            animation: tile-apparition 2s;
-            animation-fill-mode: forwards;
-            animation-delay: 500ms + $i * 200ms;
-        }
+    // animation menu 
+    .card{
+        @include animation-domino(1, 4, tile-apparition, 2s, 500ms, 200ms);
     }
 
     &__header {
@@ -115,4 +110,3 @@
         }
     }
 }
-

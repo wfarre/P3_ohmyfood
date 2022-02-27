@@ -2,3 +2,33 @@ $main-font:'Roboto', sans-serif;
 $title-font: 'Shrikhand', cursive;
 
 
+.cursive-title{
+    @include font-text(30px, 400, $black, $title-font );
+}
+
+.section-title{
+    animation: title-appear 2s forwards;
+    margin-bottom: 25px;
+    z-index: 0;
+    
+    &--big{
+        @include font-text(24px, 700);
+    }
+    &--small{
+        @include font-text(16px);
+        text-transform: uppercase;
+        margin: 0;
+    }
+}
+
+.card-text{
+    &--bold{
+        @include font-text(16px, 500);
+    }
+    &--medium{
+        @include font-text(16px, 400);
+    }
+    &--light{
+        @include font-text(14px, 300);
+    }
+}

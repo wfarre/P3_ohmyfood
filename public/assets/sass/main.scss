@@ -1,16 +1,17 @@
+@import "./utils/mixins";
+
 @import "./base/colors";
 @import "./base/fonts";
-@import "./base/padding";
+@import "./base/sizing";
 
 
 @import "./utils/breakpoints";
 
-@import "./utils/mixins";
+
 @import "./utils/placeholders.scss";
 @import "./utils/animations";
 
 
-@import "./base/titles";
 @import "./components/image";
 @import "./components/icons";
 @import "./components/checkmarks";
@@ -31,33 +32,4 @@
 @import "./pages/menu__page";
 
 
-.body {
-    @include box-sizing(100%, 100%);
-    @include font-text(16px, 400, $font-color--main, $main-font);
-    margin: 0;
-    &--home{
-        margin-top: 110px;
-    }
-    &--menu{
-        margin-top: 60px;
-    }
-}
 
-// .block__header{
-//         position: relative;
-//  }
-
-.menu-link{
-    content: " ";
-    @include box-sizing(100%, 100%,0,absolute);
-    @include absolute-positionning;
-    z-index: 1;
-}
-
-.menu-label{
-    content: " ";
-    @include box-sizing(100%, 100%,0,absolute);
-    @include absolute-positionning;
-    z-index: 1;
-    cursor: pointer;
-}

@@ -1,14 +1,3 @@
-// @mixin button-layout($bg-color,$font-color,$font-size,$border-radius, $padding){
-//     padding: $padding;
-//     background: $bg-color;
-//     color: $font-color;
-//     font-size: $font-size;
-//     border: none;
-//     border-radius: $border-radius;
-//     @extend %box-shadow-style;
-   
-// }
-
 @mixin box-sizing($height, $width, $border-radius:0, $position:relative, $background:transparent) {
     position: $position;
     height: $height;
@@ -34,4 +23,16 @@
 @mixin absolute-positionning($top:0, $left:0) {
     top:$top;
     left: $left;
+}
+
+// create a delayed animation for different elements of a same class 
+// used in section.scss
+@mixin animation-domino($from, $to, $animation-name, $animation-duration, $animation-delay-base, $animation-delay-multipliyer){
+    @for $i from $from through $to {
+       &:nth-child(#{$i}) {
+            animation: $animation-name $animation-duration;
+            animation-fill-mode: forwards;
+            animation-delay: $animation-delay-base + $i * $animation-delay-multipliyer; 
+        }
+    }
 }
