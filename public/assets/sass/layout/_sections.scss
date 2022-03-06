@@ -1,5 +1,5 @@
 .section {
-    padding: 0 $padding-lr;
+    padding: 0 5%;
 
     &--functionning {
         margin: 50px 0;
@@ -17,7 +17,7 @@
         }
 
         @include tablet-only {
-            width: calc(100% - 2 * $padding-lr - 12px);
+            width: calc(100% - 2 * 5% - 12px);
         }
 
         .button--container {
@@ -46,7 +46,7 @@
         @include desktop-only {
             border-radius: 10px;
             background-color: $bg-color--card;
-            width: calc(100% - 2 * $padding-lr);
+            width: calc(100% - 2 * 5%);
             padding-top: 0;
         }
 

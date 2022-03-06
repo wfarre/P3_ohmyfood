@@ -20,7 +20,7 @@
 
     &__content {
         @include flexbox(row, space-between, center);
-        padding: 0 $padding-lr;
+        padding: 0 5%;
 
         &__text {
             @include flexbox(column, space-between);
@@ -64,7 +64,7 @@
             @include flexbox(row, space-between, center);
             overflow: hidden;
             min-height: 20%;
-            padding: 18px $padding-lr;
+            padding: 18px 5%;
 
             &__text {
                 &__title {
@@ -93,7 +93,7 @@
 
             &:hover {
                 &>.card__content {
-                    width: calc(100% - 2 * $padding-lr - 60px);
+                    width: calc(100% - 2 * 5% - 60px);
                 }
 
                 &>.card__content>.card__content__text {
@@ -113,14 +113,14 @@
         }
 
         .card__content {
-            @include box-sizing(100%, calc(100% - 2 * $padding-lr));
+            @include box-sizing(100%, calc(100% - 2 * 5%));
             flex-wrap: nowrap;
             margin: 14px 0;
 
             transition: width 1s;
 
             &__text {
-                @include box-sizing(100%, calc(100% - 2 * $padding-lr));
+                @include box-sizing(100%, calc(100% - 2 * 5%));
 
                 &__title {
                     @extend %hidden-text;
@@ -142,7 +142,7 @@
         }
 
         input:checked~.card__content {
-            width: calc(100% - 2 * $padding-lr - 60px);
+            width: calc(100% - 2 * 5% - 60px);
         }
 
         input:checked~.card__content>.card__content__text {

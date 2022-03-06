@@ -292,7 +292,9 @@
   position: relative;
   padding: 15px 25px;
   background: linear-gradient(#FF79DA, #9356DC);
+  font-family: "Roboto", sans-serif;
   color: white;
+  text-decoration: none;
   border-radius: 40px;
   transition: transform 1s;
 }
@@ -324,7 +326,7 @@
   align-items: center;
   position: relative;
   height: 80px;
-  width: calc(90% - 12px);
+  width: calc(100% - 2 * 5% - 12px);
   border-radius: 20px;
   background-color: transparent;
   background-color: #f6f6f6;
@@ -527,10 +529,10 @@
     width: 100%;
   }
   .card--menu:hover > .card__content {
-    width: calc(90% - 60px);
+    width: calc(100% - 2 * 5% - 60px);
   }
   .card--menu:hover > .card__content > .card__content__text {
-    width: 88%;
+    width: calc(100% - 12%);
   }
   .card--menu:hover > .icon-wrapper--checkmark {
     width: 60px;
@@ -544,7 +546,7 @@
 .card--menu .card__content {
   position: relative;
   height: 100%;
-  width: 90%;
+  width: calc(100% - 2 * 5%);
   border-radius: 0;
   background-color: transparent;
   flex-wrap: nowrap;
@@ -554,7 +556,7 @@
 .card--menu .card__content__text {
   position: relative;
   height: 100%;
-  width: 90%;
+  width: calc(100% - 2 * 5%);
   border-radius: 0;
   background-color: transparent;
 }
@@ -569,10 +571,10 @@
   display: none;
 }
 .card--menu input:checked ~ .card__content {
-  width: calc(90% - 60px);
+  width: calc(100% - 2 * 5% - 60px);
 }
 .card--menu input:checked ~ .card__content > .card__content__text {
-  width: 88%;
+  width: calc(100% - 12%);
 }
 .card .menu-label {
   content: " ";
@@ -645,7 +647,7 @@
 }
 @media all and (min-width: 620px) {
   .section--functionning {
-    width: calc(90% - 12px);
+    width: calc(100% - 2 * 5% - 12px);
   }
 }
 .section--functionning .button--container {
@@ -683,7 +685,7 @@
   .section--restaurant {
     border-radius: 10px;
     background-color: #ffffff;
-    width: 90%;
+    width: calc(100% - 2 * 5%);
     padding-top: 0;
   }
 }

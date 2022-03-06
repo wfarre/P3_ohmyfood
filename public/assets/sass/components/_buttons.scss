@@ -7,10 +7,13 @@
         position: relative;
         padding: 15px 25px;
         background: $color-gradient;
+        font-family: $main-font;
         color: white;
+        text-decoration: none;
         border-radius: 40px;
 
         transition: transform 1s;
+        
 
         &:before {
             content: " ";
@@ -36,7 +39,7 @@
 
     &--functionning {
         @include flexbox(row, flex-start, center);
-        @include box-sizing(80px, calc(100% - 2 * $padding-lr - 12px), 20px);
+        @include box-sizing(80px, calc(100% - 2 * 5% - 12px), 20px);
         background-color: $bg-color;
         border-radius: 20px;
         padding: 0 8%;
