@@ -1,24 +1,25 @@
-.nav{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
+.nav {
 
-    .logo{
+
+    .logo {
         @include flexbox(row, center, center);
         @include box-sizing(60px, 100%, 0, relative, $bg-color--card);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 800;
     }
 
     .location {
         @include flexbox(row, center, center);
-        @include box-sizing(50px, 100%, 0, relative, $bg-color--location );
+        @include box-sizing(50px, 100%, 0, relative, $bg-color--location);
         @include font-text(18px, 600);
         column-gap: 18px;
         box-shadow: inset 0 7px 9px -7px $black;
 
     }
 
-    .icon-arrow-wrapper{
+    .icon-arrow-wrapper {
         @include box-sizing(100%, 30px, 0, absolute);
         @include flexbox(row, center, center);
         @include absolute-positionning(0, 24px);
@@ -26,14 +27,15 @@
         color: $font-color--main;
         font-size: 18px;
         z-index: 3;
-        &:hover{
+
+        &:hover {
             cursor: pointer;
-           &>.icon{
-               animation: translate-arrow 1s ease-out infinite;
-           }
+
+            &>.icon {
+                animation: translate-arrow 1s ease-out infinite;
+            }
 
         }
 
     }
 }
-

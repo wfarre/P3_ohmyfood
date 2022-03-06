@@ -55,11 +55,6 @@
   font-weight: 400;
   color: #000000;
   margin: 0;
-}
-.body--home {
-  margin-top: 110px;
-}
-.body--menu {
   margin-top: 60px;
 }
 
@@ -787,12 +782,6 @@
   animation: underline-appear 1.5s 500ms forwards;
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
 .nav .logo {
   display: flex;
   flex-direction: row;
@@ -803,6 +792,10 @@
   width: 100%;
   border-radius: 0;
   background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 800;
 }
 .nav .location {
   display: flex;
@@ -953,6 +946,7 @@
   color: #ffffff;
 }
 .footer__menu__item__link:hover {
+  transition: color 300ms;
   color: #FF79DA;
 }
 .footer__menu__item__link .icon-wrapper {

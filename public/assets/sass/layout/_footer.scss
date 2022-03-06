@@ -36,6 +36,7 @@
                 text-decoration: none;
                 color: $font-color--footer;
                 &:hover{
+                    transition: color 300ms;
                     color: $color-secondary;
                 }
 
