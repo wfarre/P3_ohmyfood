@@ -1,56 +1,70 @@
-.main-header {
-    position: relative;
-    background-color: $bg-color;
-    @include desktop-only{
-        background-color: transparent;
+.header {
+    .location {
+        @include flexbox(row, center, center);
+        @include box-sizing(50px, 100%, 0, relative, $bg-color--location);
+        @include font-text(18px, 600);
+        column-gap: 18px;
+        box-shadow: inset 0 7px 9px -7px $black;
     }
-    padding: 0 11%;
 
-    .header-title {
-        @include flexbox(column, center, center);
-        text-align: center;
-        padding-top: 40px;
-        padding-bottom: 30px;
-        z-index: 0;
+    .main-header{
+        position: relative;
+        background-color: $bg-color;
         @include desktop-only{
-            color: $font-color--footer;
+            background-color: transparent;
         }
-        
-        &__main {
-            font-size: 24px;
-            padding: 0 10%;
-            z-index: 10;
-        }
-        &__sub{
-            z-index: 10;
-        }
-    }
-
-    &--btn-wrapper{
-        margin-top: 30px;
-        padding-bottom: 50px;
-        z-index: 10;
-    }
-
-
-    .bg-img{
-        @include box-sizing(100%, 100%, 0, absolute);
-      @include absolute-positionning;
-        display: none;
-        @include desktop-only{
-            display: inline;
-        }
+        padding: 0 11%;
+    
+    
+       
+    
+        .header-title {
+            @include flexbox(column, center, center);
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 30px;
+            z-index: 0;
+            @include desktop-only{
+                color: $font-color--footer;
+            }
             
-
-        img{
-            @include box-sizing(100%, 100%, 0, absolute);
-            object-fit: cover;
-            @include absolute-positionning;
-            filter: blur(8px)  brightness(80%);
-            background-size: cover;
+            &__main {
+                font-size: 24px;
+                padding: 0 10%;
+                z-index: 10;
+            }
+            &__sub{
+                z-index: 10;
+            }
         }
-        
+    
+        &--btn-wrapper{
+            margin-top: 30px;
+            padding-bottom: 50px;
+            z-index: 10;
+        }
+    
+    
+        .bg-img{
+            @include box-sizing(100%, 100%, 0, absolute);
+          @include absolute-positionning;
+            display: none;
+            @include desktop-only{
+                display: inline;
+            }
+                
+    
+            img{
+                @include box-sizing(100%, 100%, 0, absolute);
+                object-fit: cover;
+                @include absolute-positionning;
+                filter: blur(8px)  brightness(80%);
+                background-size: cover;
+            }
+            
+        }
     }
+   
 }
 
 
