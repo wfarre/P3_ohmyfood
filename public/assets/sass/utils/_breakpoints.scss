@@ -1,3 +1,10 @@
+@mixin mobile-only {
+    @media all and (min-width:0px) {
+        @content;
+    }
+    
+}
+
 @mixin tablet-only{
     @media all and (min-width:620px) {
         @content;
